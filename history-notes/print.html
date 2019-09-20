@@ -1,0 +1,937 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>History Notes</title>
+        
+        <meta name="robots" content="noindex" />
+        
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+    </head>
+    <body class="light">
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            document.body.className = theme;
+            document.querySelector('html').className = theme + ' js';
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="affix"><a href="index.html">Introduction</a></li><li><a href="chapter1/index.html"><strong aria-hidden="true">1.</strong> The Formation of the Canadian Federal System</a></li><li><ol class="section"><li><a href="chapter1/1.html"><strong aria-hidden="true">1.1.</strong> The Act of Union</a></li><li><a href="chapter1/2.html"><strong aria-hidden="true">1.2.</strong> Consequences of The Act of Union</a></li><li><a href="chapter1/3.html"><strong aria-hidden="true">1.3.</strong> Responsible Government</a></li><li><a href="chapter1/4.html"><strong aria-hidden="true">1.4.</strong> Toward a Canadian Federation</a></li><li><a href="chapter1/5.html"><strong aria-hidden="true">1.5.</strong> Economic Context and US Relations</a></li><li><a href="chapter1/6.html"><strong aria-hidden="true">1.6.</strong> Moving Towards Confederation</a></li><li><a href="chapter1/7.html"><strong aria-hidden="true">1.7.</strong> British North America Act</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar" class="menu-bar">
+                    <div id="menu-bar-sticky-container">
+                        <div class="left-buttons">
+                            <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                                <i class="fa fa-bars"></i>
+                            </button>
+                            <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                                <i class="fa fa-paint-brush"></i>
+                            </button>
+                            <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                                <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                            </ul>
+                            
+                            <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                                <i class="fa fa-search"></i>
+                            </button>
+                            
+                        </div>
+
+                        <h1 class="menu-title">History Notes</h1>
+
+                        <div class="right-buttons">
+                            <a href="print.html" title="Print this book" aria-label="Print this book">
+                                <i id="print-button" class="fa fa-print"></i>
+                            </a>
+                            
+                        </div>
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1><a class="header" href="#history-notes" id="history-notes">History Notes</a></h1>
+<p>The notes are taken in bullet points along with graphs and images. The notes are organised in four sections, which are <strong>content</strong>, <strong>definitions</strong>, <strong>related questions</strong> and <strong>related documents</strong>. <em>(Related questions and related documents will be added later when going over notes.)</em> </p>
+<h3><a class="header" href="#contributing" id="contributing">Contributing</a></h3>
+<p>You can contribute by submitting related documents and questions about the notes. To do that, you can <strong>opening an issue</strong> and write your submission or suggestions. </p>
+<p>If you don't know how to do that or you don't want to register an awesome GitHub account, you can reach me on <a href="https://twitter.com/@Jerry74823160">Twitter</a> or Discord(Jerry#7471). </p>
+<h1><a class="header" href="#the-formation-of-the-canadian-federal-system" id="the-formation-of-the-canadian-federal-system">The Formation of the Canadian Federal System</a></h1>
+<h3><a class="header" href="#lessons" id="lessons">Lessons</a></h3>
+<ul>
+<li><a href="chapter1/./1.html">The Act of Union</a></li>
+<li><a href="chapter1/./chapter1/2.html">Consequences of the Act of Union</a></li>
+<li><a href="chapter1/./3.html">Responsible Government</a></li>
+<li><a href="chapter1/./4.html">Toward a Canadian Federation</a></li>
+<li><a href="chapter1/./5.html">Economic Context and US Relations</a></li>
+<li><a href="chapter1/./6.html">Moving Towards Confederation</a></li>
+<li><a href="chapter1/./7.html">British North America Act</a></li>
+<li>First Phase of Industrialisation</li>
+</ul>
+<h1><a class="header" href="#the-act-of-union" id="the-act-of-union">The Act of Union</a></h1>
+<h3><a class="header" href="#reason" id="reason">Reason</a></h3>
+<ul>
+<li>The Durham Report
+<ul>
+<li>Recommended
+<ul>
+<li>The Union of Upper and Lower Canada.</li>
+<li>One government with one legislative assembly (<a href="chapter1/1.html#legislative-union">legislative union</a>).</li>
+</ul>
+</li>
+<li>Goals
+<ul>
+<li>Create a British Canadian Majority (in population and in legislative assembly).</li>
+<li>Assimilate the French Canadians.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Econimic Objectives
+<ul>
+<li>Combine the debts of Upper and Lower Canada.
+<ul>
+<li>Upper Canada was benifited because they had more debt.</li>
+</ul>
+</li>
+<li>Promote domestic trace.
+<ul>
+<li>To keep money in the colony and strengthen the economy.</li>
+</ul>
+</li>
+<li>Collection of custom duties at the ports.
+<ul>
+<li>Most of the ports were in Lower Canada.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Advantages for Upper Canada.
+<ul>
+<li>Merged debt</li>
+<li>Custom duties income</li>
+<li>Domestic trade</li>
+<li>British Canadian majority in the legislative assembly.</li>
+</ul>
+</li>
+</ul>
+<h3><a class="header" href="#act-of-union-1840" id="act-of-union-1840">Act of Union <em>(1840)</em></a></h3>
+<ul>
+<li>
+<p>Territorial Change</p>
+<ul>
+<li>Creation of the <strong>Province of Canada</strong> <em>(United Canada)</em>.
+<ul>
+<li>Replaced Lower and Upper Canada.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Political Change</p>
+<ul>
+<li>One single government with one single legislative assembly (<a href="chapter1/1.html#legislative-union">legislative union</a>).</li>
+<li>The Governor General kept all of his powers(<a href="chapter1/1.html#veto">veto</a>).</li>
+<li>The Legislative Council kept all of its powers(approve or reject laws).</li>
+<li>Control of the colony: <strong>British Canadians</strong>.
+<ul>
+<li>They control all levels of government.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>The political organisation of the Province of Canada <em>(1840)</em></p>
+<p><img src="chapter1/./img/g1.png" alt="Polotical Organisation of the Province of Canada" /></p>
+</li>
+</ul>
+<h1><a class="header" href="#definitions" id="definitions">Definitions</a></h1>
+<h4><a class="header" href="#legislative-union" id="legislative-union">Legislative Union</a></h4>
+<p>The union of a number of territories under the authority of a single government.</p>
+<h4><a class="header" href="#veto" id="veto">Veto</a></h4>
+<p>The power to reject any bill proposed by the legislative assembly. (Final say on it.)</p>
+<h1><a class="header" href="#consequences-of-the-act-of-union" id="consequences-of-the-act-of-union">Consequences of The Act of Union</a></h1>
+<h3><a class="header" href="#french-canadian-minority" id="french-canadian-minority">French Canadian Minority</a></h3>
+<ul>
+<li>French Canadians are now the minority in population and the legislative assembly.</li>
+<li>Other disadvantages
+<ul>
+<li>Union of debts (Lower Canada has to pay some debts for Upper Canada)</li>
+<li>English became the only official language in the Province of Canada</li>
+</ul>
+</li>
+<li>Conditions for French Canadians
+<ul>
+<li>French Civil Law was kept in Lower Canada.</li>
+</ul>
+</li>
+</ul>
+<h3><a class="header" href="#early-years-of-the-province-of-canada" id="early-years-of-the-province-of-canada">Early years of the Province of Canada</a></h3>
+<ul>
+<li>
+<p>The Act of Union causes two new political parties to form.</p>
+<table><thead><tr><th></th><th>Reformers <del>(<em>Lemons</em>)</del></th><th>Conservatives <em>(Tories)</em></th></tr></thead><tbody>
+<tr><td>Composition</td><td><strong>Lower Canada</strong>:<br />French Canadians members and few English Canadian members.<br /><strong>Upper Canada</strong>:<br />English Canadian Members</td><td><strong>Lower Canada and Upper Canada</strong>:<br />English Canadian Members and <strong>two</strong> French Canadian Members.</td></tr>
+<tr><td>Support</td><td>The professional bourgeoisie.</td><td>British business class.</td></tr>
+<tr><td>Demands</td><td>Establishment of <a href="chapter1/2.html#responsible-government">responsible government</a>.<br />Protect the rights of French Canadians.</td><td>No political change. (Currently they have influence over the institutions with appointed members.)</td></tr>
+</tbody></table>
+</li>
+</ul>
+<h3><a class="header" href="#alliance-of-reformers-1841" id="alliance-of-reformers-1841">Alliance of Reformers <em>(1841)</em></a></h3>
+<ul>
+<li>
+<p>Baldwin proposed an alliance to the reformers in Lower Canada.</p>
+<ul>
+<li>
+<p>To get a majority and implement <a href="chapter1/2.html#responsible-government">responsible government</a></p>
+</li>
+<li>
+<p>Result of the alliance</p>
+<ul>
+<li>
+<p>1841: Alliance between the Reformers in Upper and Lower Canada</p>
+</li>
+<li>
+<p>1842: Majority in the Legislative Assembly for the Reformers.</p>
+<p><em>Responsible government was not implemented because UK did not want to give up control over the colony.</em></p>
+</li>
+</ul>
+</li>
+<li>
+<p>Baldwin = Leader of the Reformers in Upper Canada.</p>
+</li>
+<li>
+<p>Lafontaine = Leader of the Reformers in Lower Canada.</p>
+</li>
+<li>
+<p>The French Reformers promised to:</p>
+<ul>
+<li>Support any econimic legislation that benifitted English Reformers' businesses.</li>
+</ul>
+</li>
+<li>
+<p>The English Reformers promised to:</p>
+<ul>
+<li>Pass laws that protect French Canadian culture and identity.
+(Culture and language rights in the colony and the government.)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h1><a class="header" href="#definitions-1" id="definitions-1">Definitions</a></h1>
+<h4><a class="header" href="#responsible-government" id="responsible-government">Responsible Government</a></h4>
+<p>A government in which the members of the Executive Council are chosen from amoung the members of the majority party in the Legislative Assembly.</p>
+<h1><a class="header" href="#responsible-government-1" id="responsible-government-1">Responsible Government</a></h1>
+<h3><a class="header" href="#abolishment-of-a-hrefchapter13htmlprotectionismprotectionisma" id="abolishment-of-a-hrefchapter13htmlprotectionismprotectionisma">Abolishment of <a href="chapter1/3.html#protectionism">Protectionism</a></a></h3>
+<ul>
+<li>Economic consequences of protectionism
+<ul>
+<li>Economic growth in the Province of Canada
+<ul>
+<li>Because they had guaranteed trading partners provided by the UK.</li>
+<li>They don't have to face foreign competition.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Problem for the merchants in the UK
+<ul>
+<li>Limited option of products
+<ul>
+<li>They could get better quality products from somewhere else.</li>
+<li>They could get the same product for a better price somewhere else.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Protectionism abolished <em>(1846)</em>
+<ul>
+<li>New economic policy: <a href="chapter1/3.html#free-trade">free trade</a>.</li>
+<li>Corn Laws abolished.</li>
+<li>Navigation Acts <em>(foreign ships could not enter British ports)</em> abolished.</li>
+<li>Consequences for the merchants in the Province of Canada
+<ul>
+<li>They lost guaranteed trading partners.</li>
+<li>Increased competition. <em>(They had to face foreign competition.)</em></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3><a class="header" href="#establishing-a-hrefchapter13htmlresponsible-governmentresponsible-governmenta" id="establishing-a-hrefchapter13htmlresponsible-governmentresponsible-governmenta">Establishing <a href="chapter1/3.html#responsible-government">Responsible Government</a></a></h3>
+<ul>
+<li>Autonomy <em>(freedom)</em> for the Province of Canada
+<ul>
+<li>The UK cuts all economic ties with the Province of Canada when protectionism was abolished.</li>
+<li>The UK was willing to let the colony take control of its internal affairs.</li>
+<li>The Province of Canada gains economical and political autonomy.</li>
+</ul>
+</li>
+<li>The Reformers gained a double majority in the Legislative Assembly <em>(1848)</em>
+<ul>
+<li>They founded the first responsible government.</li>
+<li>Baldwin and Lafontaine formed the first executive council.
+<ul>
+<li>Members of the executive council are forced to resign if they lose the trust of the people and the Legislative Assembly.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>The functioning of responsible government <em>(1848)</em>
+<img src="chapter1/./img/g2.png" alt="The functioning of responsible government" /></li>
+</ul>
+<h3><a class="header" href="#responsible-government-2" id="responsible-government-2">Responsible Government</a></h3>
+<ul>
+<li>Limitations
+<ul>
+<li>The Governor General still has veto power.</li>
+<li>The Legislative Assembly can still be dissolved.</li>
+</ul>
+</li>
+<li>Atonomy of the Province of Canada
+<ul>
+<li>Internal Affairs
+<ul>
+<li>The government of the Province of Canada controls its internal affairs.</li>
+</ul>
+</li>
+<li>External Affairs
+<ul>
+<li>The UK controls its external affairs.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Defending French Canadian interests.
+<ul>
+<li>French was allowed in the Legislative Assembly (Due to the Alliance of the Reformers)</li>
+<li>English remained to be the only official language.</li>
+</ul>
+</li>
+<li>Laws to protect French Canadians
+<ul>
+<li>Granted <a href="chapter1/3.html#amnesty">amnesty</a> to all <em>Patriote</em> members.</li>
+<li>Granted finantial <a href="chapter1/3.html#compensate">compensation</a> <em>(moneh)</em> to the victims of the rebellions. 
+<ul>
+<li>The victims were mostly French Canadians.</li>
+</ul>
+</li>
+<li>English Canadians were very upset and they burned the parliament building.
+<img src="chapter1/./img/m1.png" alt="Burn the Parliament!" /></li>
+</ul>
+</li>
+</ul>
+<h3><a class="header" href="#first-nations-in-the-province-of-canada" id="first-nations-in-the-province-of-canada">First Nations in the Province of Canada</a></h3>
+<ul>
+<li>Bagot Comission <em>(1842-44)</em>
+<ul>
+<li>Written by Governor Charles Bagot.</li>
+<li>Recommendations on the management of Indigenous lands. (<a href="chapter1/3.html#reserve">reserves</a>)</li>
+</ul>
+</li>
+<li>Reserves in Lower Canada
+<ul>
+<li>Used recommendations from Bagot Comission to divide land and created reserves for the First Nations.</li>
+<li>The First Nations must live in their reserves.</li>
+</ul>
+</li>
+<li><a href="chapter1/3.html#sedentarisation">Sedentarisation</a> of First Nations
+<ul>
+<li>Form of assimilation</li>
+<li>Changed the way of life of many nomadic hunters.</li>
+</ul>
+</li>
+</ul>
+<h1><a class="header" href="#definitions-2" id="definitions-2">Definitions</a></h1>
+<h4><a class="header" href="#protectionism" id="protectionism">Protectionism</a></h4>
+<p>Economic policy that protects the economy of a country from foreign competition. (British colonies and the UK could only trade with each other and the UK).</p>
+<h4><a class="header" href="#free-trade" id="free-trade">Free Trade</a></h4>
+<p>An economic system under which custom duties are abolished in order to promote trade with other countries.</p>
+<h4><a class="header" href="#responsible-government-3" id="responsible-government-3">Responsible Government</a></h4>
+<p>A government in which the members of the Executive Council are chosen from amoung the members of the majority party in the Legislative Assembly.</p>
+<h4><a class="header" href="#amnesty" id="amnesty">Amnesty</a></h4>
+<p>A measure that terminates legal proceedings and grants a pardon.</p>
+<h4><a class="header" href="#compensate" id="compensate">Compensate</a></h4>
+<p>To pay a sum of money in recognition of damages or injuries sustained.</p>
+<h4><a class="header" href="#reserve" id="reserve">Reserve</a></h4>
+<p>Territory set aside for First Nations and administered by the Canadian government.</p>
+<h4><a class="header" href="#sedentarisation" id="sedentarisation">Sedentarisation</a></h4>
+<p>The settling of a nomadic population.</p>
+<h1><a class="header" href="#toward-a-canadian-federation" id="toward-a-canadian-federation">Toward a Canadian Federation</a></h1>
+<h3><a class="header" href="#british-north-america-in-the-1850s" id="british-north-america-in-the-1850s">British North America in the 1850s</a></h3>
+<ul>
+<li>Territory divided into three areas:
+<ul>
+<li>Province of Canada</li>
+<li>Rupert's Land (owned by the Hudson's Bay Company)</li>
+<li>Northwest Territories</li>
+</ul>
+</li>
+<li>The Reformers controlled the Legislative Assembly until 1854
+<ul>
+<li>They lost the <a href="chapter1/4.html#double-majority">double majority</a> in 1854.
+<ul>
+<li>It becomes difficult to pass bills.</li>
+</ul>
+</li>
+<li>The Reformers split up and joined one of the two new parties.
+<ul>
+<li>(The <strong>Liberals</strong> and the <strong>Conservatives</strong>)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3><a class="header" href="#the-a-hrefchapter14htmltwo-party-systemtwo-party-systema" id="the-a-hrefchapter14htmltwo-party-systemtwo-party-systema">The <a href="chapter1/4.html#two-party-system">Two Party System</a></a></h3>
+<table><thead><tr><th></th><th>Liberals</th><th>Conservatives</th></tr></thead><tbody>
+<tr><td>Composition</td><td>Radical Reformers <em>(Change!)</em></td><td>Moderate Reformers</td></tr>
+<tr><td>Lower Canada</td><td><em>Parti Rouge</em><br />Leader: <strong>Dorion</strong></td><td><em>Parti Bleu</em><br />Leader: <strong>Cartier</strong></td></tr>
+<tr><td>Upper Canada</td><td><em>Clear Grits Party</em><br />Leader: <strong>George Brown</strong></td><td><em>Conservative Party</em><br />Leader: <strong>Macdonald</strong></td></tr>
+<tr><td>Currents of thought</td><td><strong>Dorion</strong>:<br /><a href="chapter1/4.html#nationalism">Nationalism</a> and <a href="chapter1/4.html#anticlericalism">Anticlericalism</a></td><td><strong>Cartier</strong>:<br /><a href="chapter1/4.html#ultramontanism">Ultramontanism</a></td></tr>
+</tbody></table>
+<ul>
+<li>Conservatives shared common goals.
+<ul>
+<li>Promote the development of the colony.</li>
+<li>Promote domestic trades.</li>
+</ul>
+</li>
+<li>Liberals did not agree with each other.
+<ul>
+<li>Shared goals
+<ul>
+<li>Catholic Church had too much power and they wanted them out of political affairs.</li>
+</ul>
+</li>
+<li>Brown did not work with Dorion.
+<ul>
+<li>Feared French domination (Dorion)
+<ul>
+<li>Difficult for the liberals to get a double majority.</li>
+<li>Refused to work with Dorion most of the time.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3><a class="header" href="#a-hrefchapter14htmlministerial-instabilityministerial-instabilitya" id="a-hrefchapter14htmlministerial-instabilityministerial-instabilitya"><a href="chapter1/4.html#ministerial-instability">Ministerial Instability</a></a></h3>
+<ul>
+<li>Lacked a double majority <em>(1854-64)</em>
+<ul>
+<li>Conservatives had a majority in Lower Canada.</li>
+<li>Clear Grits had a majority in Upper Canada.</li>
+<li>Very difficult to pass any bills.</li>
+</ul>
+</li>
+<li><a href="chapter1/4.html#minority-government">Minority Government</a> was formed.
+<ul>
+<li>Difficult to come to an agreement on any decisions.</li>
+</ul>
+</li>
+</ul>
+<h3><a class="header" href="#a-hrefchapter14htmlproportional-representationproportional-representationa" id="a-hrefchapter14htmlproportional-representationproportional-representationa"><a href="chapter1/4.html#proportional-representation">Proportional Representation</a></a></h3>
+<p><img src="chapter1/./img/m2.png" alt="Proportional Representation!" /></p>
+<ul>
+<li>Lower Canada had more population than Upper Canada <em>(1840-1850)</em>.
+<ul>
+<li>Legislative Assembly: Equal representation.
+<ul>
+<li>To limit the number of French Canadian representatives.</li>
+</ul>
+</li>
+<li>Upper Canada's population surpasses Lower Canada's population <em>(1851)</em>.
+<ul>
+<li>Brown proposed to swap to proportional representation.</li>
+<li>Result
+<ul>
+<li>Lower Canada votes against this proposal.</li>
+<li>Conservative in Upper Canada also vote against it.
+<ul>
+<li>To keep the alliance with <em>Parti Bleu</em>. </li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h1><a class="header" href="#definitions-3" id="definitions-3">Definitions</a></h1>
+<h4><a class="header" href="#double-majority" id="double-majority">Double Majority</a></h4>
+<p>A government that had the support of the majority of the members of the Legislative Assembly, in both Upper and Lower Canada.</p>
+<h4><a class="header" href="#ministerial-instability" id="ministerial-instability">Ministerial Instability</a></h4>
+<p>When no party have more than 50% of the elected members in the Legislative Assembly. </p>
+<h4><a class="header" href="#majority-government" id="majority-government">Majority Government</a></h4>
+<p>A Government formed by the party that had more than 50% of elected members in the Legislative Assembly.</p>
+<h4><a class="header" href="#minority-government" id="minority-government">Minority Government</a></h4>
+<p>A government formed by a party that had less than 50% of the elected embers in the Legislative Assembly. It was able to govern through the support from members of other parties.</p>
+<h4><a class="header" href="#two-party-system" id="two-party-system">Two Party System</a></h4>
+<p>A political system in which two main parties succeed one another as the head of government.</p>
+<h4><a class="header" href="#nationalism" id="nationalism">Nationalism</a></h4>
+<p>A sense of belonging to a nation or a territory. Refers also to a political ideology in which a group of individuals who share common characteristics identify as a nation.</p>
+<h4><a class="header" href="#anticlericalism" id="anticlericalism">Anticlericalism</a></h4>
+<p>Belief that the church should not involve in affairs of state or public life in general.</p>
+<h4><a class="header" href="#ultramontanism" id="ultramontanism">Ultramontanism</a></h4>
+<p>A political and religious doctrine according to which the Catholic Church exercises control in all spheres, particularly with respect to political power.</p>
+<h4><a class="header" href="#proportional-representation" id="proportional-representation">Proportional Representation</a></h4>
+<p>A system in which the number of members elected to the Legislative Assembly had to be in proportion to the population of each region.</p>
+<h1><a class="header" href="#economic-context-and-us-relations" id="economic-context-and-us-relations">Economic Context and US relations</a></h1>
+<h3><a class="header" href="#economic-policy" id="economic-policy">Economic Policy</a></h3>
+<ul>
+<li>The UK adopts a free trade policy in 1846.
+<ul>
+<li>British merchants wanted protectionism gone because
+<ul>
+<li>They can get better deals from other countries.</li>
+</ul>
+</li>
+<li>Consequences for the Province of Canada
+<ul>
+<li>The Province of Canada has to compete against other countries.</li>
+<li>The Province of Canada lost guaranteed trading partners.</li>
+<li>They needed to find a new trade partner.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Reciprocity Treaty <em>(1854)</em>
+<ul>
+<li>A free trade agreement between the Province of Canada and the US. 
+<ul>
+<li>No custom duties on raw materials.</li>
+</ul>
+</li>
+<li>Because
+<ul>
+<li>Proximity to the US (close).</li>
+<li>Access to raw materials in the US.</li>
+<li>Access to a large market.</li>
+</ul>
+</li>
+<li>Consequences
+<ul>
+<li>Increase in job opportunities (agriculture and forestry).</li>
+<li>Creation of new transportation networks (canals and railways).</li>
+<li>Strengthened the economy of the Province of Canada.</li>
+<li>Pushed towards industrialisation of the Province of Canada.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3><a class="header" href="#trade-and-transportation" id="trade-and-transportation">Trade and Transportation</a></h3>
+<ul>
+<li>Development of a domestic market
+<ul>
+<li>Increased trade within the colony.</li>
+<li>Try to not depend on the US.</li>
+<li>Benefits business owners in the colony (more moneh).</li>
+</ul>
+</li>
+<li>Grand Trunk Railway
+<ul>
+<li>Made to facilitate transportation of good between the Province of Canada and the US.</li>
+<li>Economic Benefits
+<ul>
+<li>Transport goods more efficiently (than canals).</li>
+<li>Year-round transportation.</li>
+<li>Access to a larger market (more moneh).</li>
+<li>More jobs (more moneh).</li>
+<li>Colonisation of new regions.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3><a class="header" href="#us-civil-war" id="us-civil-war">US Civil War</a></h3>
+<ul>
+<li>The North: against slavery.</li>
+<li>The South: pro-slavery.</li>
+<li>President Lincoln wants to abolish slavery.
+<ul>
+<li>11 Southern States opt for <a href="chapter1/5.html#secession">secession</a>.</li>
+<li>Confederate(South) vs Union(North).</li>
+</ul>
+</li>
+<li>Britain remained &quot;neutral&quot; during the war.
+<ul>
+<li>They supported the South by giving them military access to the Province of Canada.</li>
+<li>The Union threatened the Province of Canada with <a href="chapter1/5.html#annexation">annexation</a>.</li>
+</ul>
+</li>
+<li>Increasing the cost of war for the UK (they had to send troops to defend the Province of Canada).
+<ul>
+<li>They do not want to spend money to defend Canada.</li>
+</ul>
+</li>
+</ul>
+<h3><a class="header" href="#us-relations-1860s" id="us-relations-1860s">US Relations <em>(1860s)</em></a></h3>
+<ul>
+<li>Economic consequences of the Civil War
+<ul>
+<li>Treaty of Reciprocity until 1866 (not renewed).
+<ul>
+<li>The Province of Canada needed to focus on the development of its domestic market and expand its borders.</li>
+</ul>
+</li>
+<li>Territorial consequences for the Civil War.
+<ul>
+<li>Threat of US expansion to the west
+<ul>
+<li>The Province of Canada had to purchase Rupert's Land from the Hudson's Bay company.</li>
+<li>Or they could not expand their territory.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h1><a class="header" href="#definitions-4" id="definitions-4">Definitions</a></h1>
+<h4><a class="header" href="#secession" id="secession">Secession</a></h4>
+<p>An action by which a portion of the population withdraws from a state in order to form another state.</p>
+<h4><a class="header" href="#annexation" id="annexation">Annexation</a></h4>
+<p>An action by which part or all of a state's territory comes under the control of another state (Take everything).</p>
+<h1><a class="header" href="#moving-towards-confederation" id="moving-towards-confederation">Moving Towards Confederation</a></h1>
+<h3><a class="header" href="#the-great-coalition" id="the-great-coalition">The Great Coalition</a></h3>
+<ul>
+<li>
+<p>Brown wanted to end ministerial instability.</p>
+<ul>
+<li>He chose to join Macdonald's Conservative Party to give them a double majority.</li>
+</ul>
+</li>
+<li>
+<p>The Great Coalition = Brown + Macdonald + Cartier.</p>
+</li>
+<li>
+<p><a href="chapter1/6.html#confederation">Confederation</a></p>
+<ul>
+<li>Larger domestic market (more moneh).</li>
+<li>Better defence against the US.</li>
+</ul>
+</li>
+</ul>
+<h3><a class="header" href="#charlottetown-and-quebec-conferences" id="charlottetown-and-quebec-conferences">Charlottetown and Quebec Conferences</a></h3>
+<ul>
+<li>
+<p>Charlottetown <em>(September 1864)</em></p>
+<ul>
+<li>Maritime colonies had arranged a meeting to discuss a union.
+<ul>
+<li>The Province of Canada found out and invited themselves to the negotiations.</li>
+</ul>
+</li>
+<li>Proposed a federal union (of the maritime colonies and the Province of Canada).</li>
+<li>Agreed on the principles of a federal union of the British North American colonies.
+<ul>
+<li>Newfoundland, New Brunswick, Prince Edward Island, Nova Scotia.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Quebec City <em>(October 1864)</em></p>
+<ul>
+<li><strong>72 Resolutions</strong>: Laws that will make up the confederation's constitution.
+<ul>
+<li>The division of powers between two levels of government (federal and provincial).</li>
+<li>The proportional representation of the members of the legislative assemblies of each of the provinces.
+<ul>
+<li>The Province of Canada had more population than other colonies.</li>
+</ul>
+</li>
+<li>The construction of a railway linking all of the provinces in the federal union.
+<ul>
+<li>Facilitates trade and transportation between the colonies.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3><a class="header" href="#reactions-to-confederation" id="reactions-to-confederation">Reactions to confederation</a></h3>
+<p><img src="chapter1/./img/m3.png" alt="EQUAL DEBT" /></p>
+<ul>
+<li>
+<p>Maritime Colonies</p>
+<ul>
+<li>Debt concerns
+<ul>
+<li>The Province of Canada has a lot of debt.</li>
+<li>They do not want to pay tax for the Province of Canada.</li>
+</ul>
+</li>
+<li>Proportional Representation
+<ul>
+<li>They would have less seats in the Legislative Assembly.</li>
+</ul>
+</li>
+<li>Withdrawals.
+<ul>
+<li><strong>Prince Edward Island</strong> and <strong>Newfoundland</strong>. </li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>New Brunswick elections controversy <em>(1865)</em></p>
+<ul>
+<li>The Prime Minister that was elected in 1865 did not support confederation.</li>
+<li>The lieutenant governor removed him from power and put a pro-confederation leader in power <em>(1866)</em>.</li>
+</ul>
+</li>
+<li>
+<p>Nova Scotia</p>
+<ul>
+<li>Agreed on the promise that a railway will be constructed to link Nova Scotia to the rest of the confederation.</li>
+</ul>
+</li>
+<li>
+<p>Province of Canada: Supportive</p>
+<ul>
+<li>Political
+<ul>
+<li>They will have more seats in the Legislative Assembly than other provinces, which gives them control.</li>
+</ul>
+</li>
+<li>Territorial
+<ul>
+<li>More territory <em>(more moneh)</em>.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Dorion: Against confederation</p>
+<ul>
+<li>He thinks that the French Canadians will become more of a minority in the colony.</li>
+</ul>
+</li>
+</ul>
+<h3><a class="header" href="#london-conference-1866" id="london-conference-1866">London Conference <em>(1866)</em></a></h3>
+<ul>
+<li>Bill drafted based on the <strong>72 Resolutions</strong>.
+<ul>
+<li>New constitution: BNA Act.</li>
+</ul>
+</li>
+<li>The Federal Government kept two powers.
+<ul>
+<li><a href="chapter1/6.html#residual-power">Residual power</a> and <a href="chapter1/6.html#power-of-disallowance">power of disallowance</a>.</li>
+</ul>
+</li>
+<li>Wanted a confederation but implemented a federation.
+<ul>
+<li>The federal government holds more power in a federation than in a confederation.</li>
+</ul>
+</li>
+</ul>
+<h1><a class="header" href="#definitions-5" id="definitions-5">Definitions</a></h1>
+<h4><a class="header" href="#confederation" id="confederation">Confederation</a></h4>
+<p>The association of several states that delegate some of their power to a central government while maintaining their political authority.</p>
+<h4><a class="header" href="#residual-power" id="residual-power">Residual Power</a></h4>
+<p>All powers not stipulated in the Constitution automatically fall to the federal government.</p>
+<h4><a class="header" href="#power-of-disallowance" id="power-of-disallowance">Power of Disallowance</a></h4>
+<p>The power to reject laws adopted by the provinces.</p>
+<h1><a class="header" href="#british-north-america-act" id="british-north-america-act">British North America Act</a></h1>
+<h3><a class="header" href="#bna-act-july-1st-1867" id="bna-act-july-1st-1867">BNA Act <em>(July 1^st^, 1867)</em></a></h3>
+<ul>
+<li><a href="chapter1/7.html#dominion">Dominion</a> of Canada was created under a <a href="chapter1/7.html#constitutional-monarchy">constitutional monarchy</a>.</li>
+<li>Four provinces: Nova Scotia, New Brunswick, Quebec, Ontario.
+<ul>
+<li>Prince Edward Island and Newfoundland remained British Colonies.</li>
+</ul>
+</li>
+<li>The Dominion of Canada purchased Rupert's land from the Hudson's Bay Company <em>(1869)</em>.
+<ul>
+<li>Territorial Consequence: creation of Manitoba <em>(1870)</em>.</li>
+</ul>
+</li>
+</ul>
+<h3><a class="header" href="#dominion-of-canada-within-the-empire" id="dominion-of-canada-within-the-empire">Dominion of Canada within the empire</a></h3>
+<ul>
+<li>The Dominion of Canada could not modify their constitution without the permission from the UK.</li>
+</ul>
+<h4><a class="header" href="#the-levels-of-government-in-the-province-of-canada-1867" id="the-levels-of-government-in-the-province-of-canada-1867">The levels of government in the Province of Canada <em>(1867)</em></a></h4>
+<p><img src="chapter1/./img/g3.png" alt="The levels of government in the Province of Canada" /></p>
+<h4><a class="header" href="#the-federal-government-1867" id="the-federal-government-1867">The federal government <em>(1867)</em></a></h4>
+<p><img src="chapter1/./img/g4.png" alt="The federal government (1867)" /></p>
+<h4><a class="header" href="#federal-and-provincial-government-jurisdictions" id="federal-and-provincial-government-jurisdictions">Federal and Provincial Government Jurisdictions</a></h4>
+<table><thead><tr><th>Federal Jurisdiction</th><th>Provincial Jurisdictions</th><th>Shared Jurisdictions</th></tr></thead><tbody>
+<tr><td>Indian Affairs<br />Trade<br />Defence and Military<br />Criminal Law<br />Custom Duties<br />Currency and Banking<br />Navigation and Shipping<br />Postal Service<br />Power of Disallowance<br />Residual Powers<br />Taxes</td><td>Civil Law<br />Education<br />Municipalities<br />Natural Resources and Raw Materials<br />Health Care</td><td>Agriculture<br />Economic Development<br />Immigration<br />Income Taxes<br />Fishing<br />Prisons and Justice<br />Transportation<br />Public Works</td></tr>
+</tbody></table>
+<h1><a class="header" href="#definitions-6" id="definitions-6">Definitions</a></h1>
+<h4><a class="header" href="#dominion" id="dominion">Dominion</a></h4>
+<p>An autonomous member state of the British Commonwealth. They have control of their internal affairs, but the UK still controls their external affairs.</p>
+<h4><a class="header" href="#constitutional-monarchy" id="constitutional-monarchy">Constitutional Monarchy</a></h4>
+<p>A political system in which the head of state is a king or queen whose powers are limited by a constitution.</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+
+                
+            </nav>
+
+        </div>
+
+        
+        <!-- Livereload script (if served using the cli tool) -->
+        <script type="text/javascript">
+            var socket = new WebSocket("ws://localhost:3001");
+            socket.onmessage = function (event) {
+                if (event.data === "reload") {
+                    socket.close();
+                    location.reload(true); // force reload from server (not from cache)
+                }
+            };
+
+            window.onbeforeunload = function() {
+                socket.close();
+            }
+        </script>
+        
+
+        
+
+        
+
+        
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+        
+        <script type="text/javascript">
+        window.addEventListener('load', function() {
+            window.setTimeout(window.print, 100);
+        });
+        </script>
+        
+        
+
+    </body>
+</html>
