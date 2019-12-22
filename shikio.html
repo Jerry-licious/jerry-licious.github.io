@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Timeline</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+</head>
+<body>
+<script src="shikio.js"></script>
+<script>
+    let href = window.location.href.split("?");
+    if (href[1]) {
+        document.body.appendChild(
+            shikio.Timeline.fromJSON(JSON.parse(decodeURIComponent(href[1]))).render()
+        );
+    }
+</script>
+</body>
+</html>
