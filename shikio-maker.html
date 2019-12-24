@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Shikio Maker</title>
+    <link rel="stylesheet" href="shikio-maker.css"/>
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+</head>
+<body>
+<script src="https://kaminingyou.github.io/shikio.js"></script>
+<script src="shikio-maker.js"></script>
+<div class="fill" style="position: relative; user-select: none;">
+    <div class="pane left-pane" align="center" id="timeline">
+        <input class="text-input" type="number" placeholder="Start">
+        <input class="text-input" type="number" placeholder="End">
+        <input class="text-input" type="number" placeholder="Interval">
+        <input class="text-input" type="number" placeholder="Width/Mark">
+        <input class="text-input" type="number" placeholder="Rows">
+        <input class="text-input" placeholder="Title">
+        <input class="button" type="button" value="Generate" onclick="generateTimeline()">
+    </div>
+    <div class="pane periods-pane">
+        <table class="horizontal-fill" cellspacing="0">
+            <tbody id="periodsList"><tr>
+                <td>Start</td>
+                <td>End</td>
+                <td>Row</td>
+                <td>Colour</td>
+                <td>Title</td>
+                <td onclick="addPeriod()">+</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="pane events-pane">
+        <table class="horizontal-fill" cellspacing="0">
+            <tbody id="eventsList"><tr>
+                <td>Time</td>
+                <td>Row</td>
+                <td>Title</td>
+                <td>Link</td>
+                <td>Description</td>
+                <td onclick="addEvent()">+</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="pane timeline-pane" id="timelineDisplay"></div>
+    <div class="pane code-pane">
+        <div>JSON link</div>
+        <textarea id="link" readonly></textarea>
+        <div>HTML</div>
+        <textarea id="html" readonly></textarea>
+    </div>
+</div>
+</body>
+</html>
