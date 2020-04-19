@@ -1,4 +1,4 @@
-const canvas = document.getElementById("diagram");
+﻿const canvas = document.getElementById("diagram");
 // Set the dimensions of the canvas to be equal to the size of the window.
 // So that the canvas will not appear blurry.
 canvas.setAttribute("width", window.innerWidth.toString());
@@ -30,6 +30,12 @@ function attempt_draw(){
     context.clearRect(0, 0, canvas.width, canvas.height);
     force_diagram(degree_input, force_input);
 }
+
+document.body.addEventListener("keydown", function (event) {
+    if (event.key === "Enter") {
+        attempt_draw();
+    }
+});
 
 function force_diagram(degree, force) {
     /// Calculate the cos and sin value to speed up the process.
