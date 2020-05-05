@@ -1,4 +1,4 @@
-const config = {
+﻿const config = {
     cross_width: 3,
     stroke_width: 2,
     vec_mark_radius: 6,
@@ -100,7 +100,7 @@ function draw_vector_addition(u, v) {
         rad_c = 2 * Math.PI - rad_c;
     }
     label(svg_util.x(u_multiplied.x + config.vec_mark_radius), svg_util.y(u_multiplied.y),
-        round(rad_c * 180 / Math.PI).toString() + "°");
+        round(Math.abs(rad_c * 180 / Math.PI)).toString() + "°");
 
     const u_magnitude = u.magnitude();
     const v_magnitude = v.magnitude();
@@ -116,7 +116,10 @@ function draw_vector_addition(u, v) {
         - 2 * resultant_magnitude * u_magnitude * Math.cos(rad_b))) !== round(v_magnitude)) {
         rad_b = Math.PI - rad_b;
     }
-    label(svg_util.x(10), svg_util.y(10), round(rad_b * 180 / Math.PI).toString() + "°");
+    if (rad_b > Math.PI) {
+        rad_b = 2 * Math.PI - rad_b;
+    }
+    label(svg_util.x(10), svg_util.y(10), round(Math.abs(rad_b * 180 / Math.PI)).toString() + "°");
 }
 
 function attempt_draw() {
