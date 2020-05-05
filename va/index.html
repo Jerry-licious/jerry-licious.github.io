@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title> Vector Addition (Magnitude|Direction) </title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <svg id="image"></svg>
+    <div class="info">
+        <div class="input"><div class="fill">
+            <input type="text" id="ux" placeholder="x of u">
+        </div></div>
+        <div class="input"><div class="fill">
+            <input type="text" id="uy" placeholder="y of u">
+        </div></div>
+        <div class="input"><div class="fill">
+            <input type="text" id="vx" placeholder="x of v">
+        </div></div>
+        <div class="input"><div class="fill">
+            <input type="text" id="vy" placeholder="y of v">
+        </div></div>
+        <div class="input"><div class="fill">
+            <button onclick="attempt_draw()">Draw</button>
+        </div></div>
+    </div>
+    <script type="text/javascript" src="svg_util.js"></script>
+    <script type="text/javascript" src="vec.js"></script>
+    <script type="text/javascript" src="vamd.js"></script>
+  </body>
+</html>
