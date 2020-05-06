@@ -1,4 +1,4 @@
-﻿const config = {
+const config = {
     cross_width: 3,
     stroke_width: 2,
     vec_mark_radius: 6,
@@ -122,6 +122,7 @@ function draw_vector_addition(u, v) {
     label(svg_util.x(10), svg_util.y(10), round(Math.abs(rad_b * 180 / Math.PI)).toString() + "°");
 }
 
+let magnitude_orientation = false;
 function attempt_draw() {
     const ux = parseFloat(document.getElementById("ux").value);
     const uy = parseFloat(document.getElementById("uy").value);
@@ -132,5 +133,26 @@ function attempt_draw() {
         return;
     }
 
-    draw_vector_addition(new Vec(ux, uy), new Vec(vx, vy));
+    if (magnitude_orientation) {
+        draw_vector_addition(
+            Vec.from_magnitude_and_orientation(ux, uy * Math.PI / 180),
+            Vec.from_magnitude_and_orientation(vx, vy * Math.PI / 180));
+    } else {
+        draw_vector_addition(new Vec(ux, uy), new Vec(vx, vy));
+    }
+}
+
+function swap() {
+    magnitude_orientation = !magnitude_orientation;
+    if (magnitude_orientation) {
+        document.getElementById("ux").setAttribute("placeholder", "magnitude of u");
+        document.getElementById("uy").setAttribute("placeholder", "orientation of u");
+        document.getElementById("vx").setAttribute("placeholder", "magnitude of v");
+        document.getElementById("vy").setAttribute("placeholder", "orientation of v");
+    } else {
+        document.getElementById("ux").setAttribute("placeholder", "x of u");
+        document.getElementById("uy").setAttribute("placeholder", "y of u");
+        document.getElementById("vx").setAttribute("placeholder", "x of v");
+        document.getElementById("vy").setAttribute("placeholder", "y of v");
+    }
 }
