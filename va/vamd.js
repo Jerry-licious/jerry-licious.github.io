@@ -1,4 +1,4 @@
-const config = {
+﻿const config = {
     cross_width: 3,
     stroke_width: 2,
     vec_mark_radius: 6,
@@ -110,15 +110,9 @@ function draw_vector_addition(u, v) {
 
     label(svg_util.x(resultant_label_position.x), svg_util.y(resultant_label_position.y), round(resultant_magnitude).toString());
 
-    let rad_b = Math.asin(v_magnitude * Math.sin(rad_c) / resultant_magnitude);
-    // Use cos law to check if the angle is acute
-    if (round(Math.sqrt(Math.pow(resultant_magnitude, 2) + Math.pow(u_magnitude, 2)
-        - 2 * resultant_magnitude * u_magnitude * Math.cos(rad_b))) !== round(v_magnitude)) {
-        rad_b = Math.PI - rad_b;
-    }
-    if (rad_b > Math.PI) {
-        rad_b = 2 * Math.PI - rad_b;
-    }
+    let rad_b = Math.acos((Math.pow(u_magnitude, 2) + Math.pow(resultant_magnitude, 2) - Math.pow(v_magnitude, 2)) /
+                            (2 * u_magnitude * resultant_magnitude));
+
     label(svg_util.x(10), svg_util.y(10), round(Math.abs(rad_b * 180 / Math.PI)).toString() + "°");
 }
 
