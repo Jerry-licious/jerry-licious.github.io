@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html lang="en" class="sidebar-visible no-js">
+<html lang="en" class="sidebar-visible no-js light">
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
@@ -36,11 +36,11 @@
 
         
     </head>
-    <body class="light">
+    <body>
         <!-- Provide site root to javascript -->
         <script type="text/javascript">
             var path_to_root = "";
-            var default_theme = "light";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "light" : "light";
         </script>
 
         <!-- Work around some values being stored in localStorage wrapped in quotes -->
@@ -64,8 +64,11 @@
             var theme;
             try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
             if (theme === null || theme === undefined) { theme = default_theme; }
-            document.body.className = theme;
-            document.querySelector('html').className = theme + ' js';
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
         </script>
 
         <!-- Hide / unhide sidebar before it is displayed -->
@@ -82,7 +85,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="affix"><a href="index.html">Introduction</a></li><li class="affix"><a href="timelines.html">Timelines</a></li><li><a href="chapter1/index.html"><strong aria-hidden="true">1.</strong> The Formation of the Canadian Federal System</a></li><li><ol class="section"><li><a href="chapter1/1.html"><strong aria-hidden="true">1.1.</strong> The Act of Union</a></li><li><a href="chapter1/2.html"><strong aria-hidden="true">1.2.</strong> Consequences of The Act of Union</a></li><li><a href="chapter1/3.html"><strong aria-hidden="true">1.3.</strong> Responsible Government</a></li><li><a href="chapter1/4.html"><strong aria-hidden="true">1.4.</strong> Toward a Canadian Federation</a></li><li><a href="chapter1/5.html"><strong aria-hidden="true">1.5.</strong> Economic Context and US Relations</a></li><li><a href="chapter1/6.html"><strong aria-hidden="true">1.6.</strong> Moving Towards Confederation</a></li><li><a href="chapter1/7.html"><strong aria-hidden="true">1.7.</strong> British North America Act</a></li><li><a href="chapter1/8.html"><strong aria-hidden="true">1.8.</strong> First Phase of Industrialisation</a></li><li><a href="chapter1/9.html"><strong aria-hidden="true">1.9.</strong> Forestry and Agricultural Industries</a></li><li><a href="chapter1/10.html"><strong aria-hidden="true">1.10.</strong> Working Conditions and Unions</a></li><li><a href="chapter1/11.html"><strong aria-hidden="true">1.11.</strong> Population Movements</a></li><li><a href="chapter1/12.html"><strong aria-hidden="true">1.12.</strong> Presence of the Catholic Church</a></li><li><a href="chapter1/13.html"><strong aria-hidden="true">1.13.</strong> Role of Women and Culture in Quebec</a></li><li><a href="chapter1/14.html"><strong aria-hidden="true">1.14.</strong> Development of the Canadian Federation: Western Expansion</a></li><li><a href="chapter1/15.html"><strong aria-hidden="true">1.15.</strong> First Nations in the Dominion of Canada</a></li><li><a href="chapter1/16.html"><strong aria-hidden="true">1.16.</strong> Macdonald and Mercier's Government</a></li></ol></li><li><a href="chapter2/index.html"><strong aria-hidden="true">2.</strong> Nationalisms and the Autonomy of Canada</a></li><li><ol class="section"><li><a href="chapter2/1.html"><strong aria-hidden="true">2.1.</strong> Laurier's Liberal Government</a></li><li><a href="chapter2/2.html"><strong aria-hidden="true">2.2.</strong> Second Phase of Industrialisation (1896-1929)</a></li><li><a href="chapter2/3.html"><strong aria-hidden="true">2.3.</strong> Transformation of Society in The Beginning of The 20th Century</a></li><li><a href="chapter2/4.html"><strong aria-hidden="true">2.4.</strong> World War I</a></li><li><a href="chapter2/5.html"><strong aria-hidden="true">2.5.</strong> Inter-war Period</a></li><li><a href="chapter2/6.html"><strong aria-hidden="true">2.6.</strong> World War II</a></li></ol></li><li><a href="chapter3/index.html"><strong aria-hidden="true">3.</strong> The Modernisation of Quebec and the Quiet Revolution</a></li><li><ol class="section"><li><a href="chapter3/1.html"><strong aria-hidden="true">3.1.</strong> Duplessis Government</a></li><li><a href="chapter3/2.html"><strong aria-hidden="true">3.2.</strong> The Quiet Revolution (1960-1970)</a></li><li><a href="chapter3/3.html"><strong aria-hidden="true">3.3.</strong> Quebec Society During the 1960s</a></li><li><a href="chapter3/4.html"><strong aria-hidden="true">3.4.</strong> Quebec Society Under The Bourassa Government (1970-1976)</a></li><li><a href="chapter3/5.html"><strong aria-hidden="true">3.5.</strong> Quebec society under Levesque (1976-1980)</a></li></ol></li><li><a href="articles/index.html"><strong aria-hidden="true">4.</strong> Articles</a></li><li><ol class="section"><li><a href="articles/economic_cycles.html"><strong aria-hidden="true">4.1.</strong> Economic Cycles</a></li></ol></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="index.html">Introduction</a></li><li class="chapter-item expanded affix "><a href="timelines.html">Timelines</a></li><li class="chapter-item expanded "><a href="chapter1/index.html"><strong aria-hidden="true">1.</strong> The Formation of the Canadian Federal System</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="chapter1/1.html"><strong aria-hidden="true">1.1.</strong> The Act of Union</a></li><li class="chapter-item expanded "><a href="chapter1/2.html"><strong aria-hidden="true">1.2.</strong> Consequences of The Act of Union</a></li><li class="chapter-item expanded "><a href="chapter1/3.html"><strong aria-hidden="true">1.3.</strong> Responsible Government</a></li><li class="chapter-item expanded "><a href="chapter1/4.html"><strong aria-hidden="true">1.4.</strong> Toward a Canadian Federation</a></li><li class="chapter-item expanded "><a href="chapter1/5.html"><strong aria-hidden="true">1.5.</strong> Economic Context and US Relations</a></li><li class="chapter-item expanded "><a href="chapter1/6.html"><strong aria-hidden="true">1.6.</strong> Moving Towards Confederation</a></li><li class="chapter-item expanded "><a href="chapter1/7.html"><strong aria-hidden="true">1.7.</strong> British North America Act</a></li><li class="chapter-item expanded "><a href="chapter1/8.html"><strong aria-hidden="true">1.8.</strong> First Phase of Industrialisation</a></li><li class="chapter-item expanded "><a href="chapter1/9.html"><strong aria-hidden="true">1.9.</strong> Forestry and Agricultural Industries</a></li><li class="chapter-item expanded "><a href="chapter1/10.html"><strong aria-hidden="true">1.10.</strong> Working Conditions and Unions</a></li><li class="chapter-item expanded "><a href="chapter1/11.html"><strong aria-hidden="true">1.11.</strong> Population Movements</a></li><li class="chapter-item expanded "><a href="chapter1/12.html"><strong aria-hidden="true">1.12.</strong> Presence of the Catholic Church</a></li><li class="chapter-item expanded "><a href="chapter1/13.html"><strong aria-hidden="true">1.13.</strong> Role of Women and Culture in Quebec</a></li><li class="chapter-item expanded "><a href="chapter1/14.html"><strong aria-hidden="true">1.14.</strong> Development of the Canadian Federation: Western Expansion</a></li><li class="chapter-item expanded "><a href="chapter1/15.html"><strong aria-hidden="true">1.15.</strong> First Nations in the Dominion of Canada</a></li><li class="chapter-item expanded "><a href="chapter1/16.html"><strong aria-hidden="true">1.16.</strong> Macdonald and Mercier's Government</a></li></ol></li><li class="chapter-item expanded "><a href="chapter2/index.html"><strong aria-hidden="true">2.</strong> Nationalisms and the Autonomy of Canada</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="chapter2/1.html"><strong aria-hidden="true">2.1.</strong> Laurier's Liberal Government</a></li><li class="chapter-item expanded "><a href="chapter2/2.html"><strong aria-hidden="true">2.2.</strong> Second Phase of Industrialisation (1896-1929)</a></li><li class="chapter-item expanded "><a href="chapter2/3.html"><strong aria-hidden="true">2.3.</strong> Transformation of Society in The Beginning of The 20th Century</a></li><li class="chapter-item expanded "><a href="chapter2/4.html"><strong aria-hidden="true">2.4.</strong> World War I</a></li><li class="chapter-item expanded "><a href="chapter2/5.html"><strong aria-hidden="true">2.5.</strong> Inter-war Period</a></li><li class="chapter-item expanded "><a href="chapter2/6.html"><strong aria-hidden="true">2.6.</strong> World War II</a></li></ol></li><li class="chapter-item expanded "><a href="chapter3/index.html"><strong aria-hidden="true">3.</strong> The Modernisation of Quebec and the Quiet Revolution</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="chapter3/1.html"><strong aria-hidden="true">3.1.</strong> Duplessis Government</a></li><li class="chapter-item expanded "><a href="chapter3/2.html"><strong aria-hidden="true">3.2.</strong> The Quiet Revolution (1960-1970)</a></li><li class="chapter-item expanded "><a href="chapter3/3.html"><strong aria-hidden="true">3.3.</strong> Quebec Society During the 1960s</a></li><li class="chapter-item expanded "><a href="chapter3/4.html"><strong aria-hidden="true">3.4.</strong> Quebec Society Under The Bourassa Government (1970-1976)</a></li><li class="chapter-item expanded "><a href="chapter3/5.html"><strong aria-hidden="true">3.5.</strong> Quebec society under Levesque (1976-1980)</a></li></ol></li><li class="chapter-item expanded "><a href="chapter4/index.html"><strong aria-hidden="true">4.</strong> Societal Choices in Contemporary Quebec</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="chapter4/1.html"><strong aria-hidden="true">4.1.</strong> Political Choices in Contemporary Quebec</a></li><li class="chapter-item expanded "><a href="chapter4/2.html"><strong aria-hidden="true">4.2.</strong> Economic Choices in Contemporary Quebec</a></li><li class="chapter-item expanded "><a href="chapter4/3.html"><strong aria-hidden="true">4.3.</strong> Social Choices in Contemporary Quebec</a></li><li class="chapter-item expanded "><a href="chapter4/4.html"><strong aria-hidden="true">4.4.</strong> Cultural Choices in Contemporary Quebec</a></li></ol></li><li class="chapter-item expanded "><a href="articles/index.html"><strong aria-hidden="true">5.</strong> Articles</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="articles/economic_cycles.html"><strong aria-hidden="true">5.1.</strong> Economic Cycles</a></li></ol></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -91,37 +94,36 @@
 
             <div class="page">
                 
-                <div id="menu-bar" class="menu-bar">
-                    <div id="menu-bar-sticky-container">
-                        <div class="left-buttons">
-                            <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
-                                <i class="fa fa-bars"></i>
-                            </button>
-                            <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
-                                <i class="fa fa-paint-brush"></i>
-                            </button>
-                            <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
-                                <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
-                                <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
-                                <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
-                                <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
-                                <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
-                            </ul>
-                            
-                            <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
-                                <i class="fa fa-search"></i>
-                            </button>
-                            
-                        </div>
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                        
+                    </div>
 
-                        <h1 class="menu-title">History Notes</h1>
+                    <h1 class="menu-title">History Notes</h1>
 
-                        <div class="right-buttons">
-                            <a href="print.html" title="Print this book" aria-label="Print this book">
-                                <i id="print-button" class="fa fa-print"></i>
-                            </a>
-                            
-                        </div>
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        
                     </div>
                 </div>
 
@@ -289,12 +291,13 @@
 <li>
 <p>The Act of Union causes two new political parties to form.</p>
 <table><thead><tr><th></th><th>Reformers <del>(<em>Lemons</em>)</del></th><th>Conservatives <em>(Tories)</em></th></tr></thead><tbody>
-<tr><td>Composition</td><td><strong>Lower Canada</strong>:<br />French Canadians members and few English Canadian members.<br /><strong>Upper Canada</strong>:<br />English Canadian Members</td><td><strong>Lower Canada and Upper Canada</strong>:<br />English Canadian Members and <strong>two</strong> French Canadian Members.</td></tr>
-<tr><td>Support</td><td>The professional bourgeoisie.</td><td>British business class.</td></tr>
-<tr><td>Demands</td><td>Establishment of <a href="chapter1/2.html#responsible-government">responsible government</a>.<br />Protect the rights of French Canadians.</td><td>No political change. (Currently they have influence over the institutions with appointed members.)</td></tr>
+<tr><td>Composition</td><td><strong>Lower Canada</strong>:<br />French Canadians members and few English Canadian members.<br /></td><td></td></tr>
 </tbody></table>
 </li>
 </ul>
+<p><strong>Upper Canada</strong>:<br />English Canadian Members|<strong>Lower Canada and Upper Canada</strong>:<br />English Canadian Members and <strong>two</strong> French Canadian Members.|
+|Support|The professional bourgeoisie.|British business class.|
+|Demands|Establishment of <a href="chapter1/2.html#responsible-government">responsible government</a>.<br />Protect the rights of French Canadians.|No political change. (Currently they have influence over the institutions with appointed members.)|</p>
 <h3><a class="header" href="#alliance-of-reformers-1841" id="alliance-of-reformers-1841">Alliance of Reformers <em>(1841)</em></a></h3>
 <ul>
 <li>
@@ -506,7 +509,9 @@
 <tr><td>Composition</td><td>Radical Reformers <em>(Change!)</em></td><td>Moderate Reformers</td></tr>
 <tr><td>Lower Canada</td><td><em>Parti Rouge</em><br />Leader: <strong>Dorion</strong></td><td><em>Parti Bleu</em><br />Leader: <strong>Cartier</strong></td></tr>
 <tr><td>Upper Canada</td><td><em>Clear Grits Party</em><br />Leader: <strong>George Brown</strong></td><td><em>Conservative Party</em><br />Leader: <strong>Macdonald</strong></td></tr>
-<tr><td>Currents of thought</td><td><strong>Dorion</strong>:<br /><a href="chapter1/4.html#nationalism">Nationalism</a> and <a href="chapter1/4.html#anticlericalism">Anticlericalism</a></td><td><strong>Cartier</strong>:<br /><a href="chapter1/4.html#ultramontanism">Ultramontanism</a></td></tr>
+<tr><td>Currents of thought</td><td><strong>Dorion</strong>:<br /></td><td></td></tr>
+<tr><td><a href="chapter1/4.html#nationalism">Nationalism</a> and <a href="chapter1/4.html#anticlericalism">Anticlericalism</a></td><td><strong>Cartier</strong>:<br /></td><td></td></tr>
+<tr><td><a href="chapter1/4.html#ultramontanism">Ultramontanism</a></td><td></td><td></td></tr>
 </tbody></table>
 <ul>
 <li>Conservatives shared common goals.
@@ -2455,13 +2460,15 @@ Allow for the development of a Canadian identity as it would move away from Brit
 </ul>
 <h3><a class="header" href="#conscription-crises" id="conscription-crises">Conscription Crises</a></h3>
 <ul>
-<li>British imperialism vs. French Canadian nationalism
+<li>
+<p>British imperialism vs. French Canadian nationalism</p>
 <ul>
 <li>British imperialists wanted conscription to support the UK overseas.</li>
 <li>French Canadian nationalists were against conscription because they did not feel attachment to either the UK or France.</li>
 </ul>
 </li>
-<li>Cause
+<li>
+<p>Cause</p>
 <ul>
 <li>Voluntary enlistment was very low
 <ul>
@@ -2476,8 +2483,9 @@ Allow for the development of a Canadian identity as it would move away from Brit
 <li>Military Service Act <em>(1917)</em></li>
 </ul>
 </li>
-<li>Anti-conscription rallies
-<img src="chapter2/./img/m1.png" alt="Anti-conscription Parade!" style="zoom: 75%;" />
+<li>
+<p>Anti-conscription rallies
+<img src="chapter2/./img/m1.png" alt="Anti-conscription Parade!" style="zoom: 75%;" /></p>
 <ul>
 <li>Montreal: Peaceful rally protesting conscription.</li>
 <li>Quebec city: 5 days of rioting
@@ -3062,8 +3070,11 @@ Allow for the development of a Canadian identity as it would move away from Brit
 </li>
 <li>Modernisation of Agriculture
 <ul>
-<li>Duplessis is supported by electoral districts in rural areas.</li>
-<li>Duplessis adopted policies to modernise rural areas and farms.
+<li>
+<p>Duplessis is supported by electoral districts in rural areas.</p>
+</li>
+<li>
+<p>Duplessis adopted policies to modernise rural areas and farms.</p>
 <ul>
 <li>To secure votes in his election</li>
 <li><em>Act to Promote Rural Electrification by Means of Electricity Cooperatives</em> <em>(1945)</em>
@@ -3076,7 +3087,8 @@ Allow for the development of a Canadian identity as it would move away from Brit
 </li>
 </ul>
 </li>
-<li>Benefits to the agricultural industry
+<li>
+<p>Benefits to the agricultural industry</p>
 <ul>
 <li>Increase in production and efficiency</li>
 <li>Requires less employees</li>
@@ -3096,9 +3108,12 @@ Allow for the development of a Canadian identity as it would move away from Brit
 </li>
 <li>Education
 <ul>
-<li>More religion than education</li>
-<li>Poor school conditions
-<img src="chapter3/./img/m2.png" alt="Big Brain Duplessis" style="zoom: 33%;" />
+<li>
+<p>More religion than education</p>
+</li>
+<li>
+<p>Poor school conditions
+<img src="chapter3/./img/m2.png" alt="Big Brain Duplessis" style="zoom: 33%;" /></p>
 <ul>
 <li>Insufficient funds invested in education</li>
 <li>Outdated infrastructure <em>(1950s)</em>
@@ -3111,7 +3126,9 @@ Allow for the development of a Canadian identity as it would move away from Brit
 <li>50% of school boards were experiencing financial difficulties <em>(1956)</em>.</li>
 </ul>
 </li>
-<li>The level of schooling around francophones were lower than that of anglophones.</li>
+<li>
+<p>The level of schooling around francophones were lower than that of anglophones.</p>
+</li>
 </ul>
 </li>
 <li>Health Care
@@ -3144,7 +3161,8 @@ Allow for the development of a Canadian identity as it would move away from Brit
 </li>
 <li>Opposition by intellectuals and artists
 <ul>
-<li><em>Refus Global</em>
+<li>
+<p><em>Refus Global</em></p>
 <ul>
 <li><a href="chapter3/1.html#manifesto">Manifesto</a> written by 15 young artists.
 <ul>
@@ -3159,15 +3177,17 @@ Allow for the development of a Canadian identity as it would move away from Brit
 </li>
 </ul>
 </li>
-<li><em>Cité Libre</em>
-<img src="chapter3/./img/m3.png" alt="Imagine being intellectuals in the 1950s" style="zoom: 50%;" />
+<li>
+<p><em>Cité Libre</em>
+<img src="chapter3/./img/m3.png" alt="Imagine being intellectuals in the 1950s" style="zoom: 50%;" /></p>
 <ul>
 <li>Magazine founded by Pierre Elliott Trudeau and Gérard Pelletier.</li>
 <li>Promoted individual freedoms, democracy and freedom of expression.</li>
 <li>Denounced the Duplessis government's social conservatism, nationalism, corruption and favouritism. </li>
 </ul>
 </li>
-<li>Secularism <em>(action)</em>
+<li>
+<p>Secularism <em>(action)</em></p>
 <ul>
 <li>Advocated by artists and intellectuals who oppose Duplessis</li>
 <li>Demands
@@ -3390,11 +3410,19 @@ Allow for the development of a Canadian identity as it would move away from Brit
 <li>Death of Duplessis <em>(1959)</em></li>
 <li>Paul Sauvé
 <ul>
-<li>Replaced Duplessis as premier.</li>
-<li>Shifted away from Duplessis' policies.</li>
-<li>Passed 66 laws in 4 months.
-<img src="chapter3/./img/m4.png" alt="This is how pros procrastinate." style="zoom:75%;" /></li>
-<li>Died in 1960.</li>
+<li>
+<p>Replaced Duplessis as premier.</p>
+</li>
+<li>
+<p>Shifted away from Duplessis' policies.</p>
+</li>
+<li>
+<p>Passed 66 laws in 4 months.
+<img src="chapter3/./img/m4.png" alt="This is how pros procrastinate." style="zoom:75%;" /></p>
+</li>
+<li>
+<p>Died in 1960.</p>
+</li>
 </ul>
 </li>
 </ul>
@@ -4124,6 +4152,7 @@ Allow for the development of a Canadian identity as it would move away from Brit
 <li><em>Centres locaux de services communautaires</em> <em>(<strong>CLSC</strong>)</em> <em>(1974)</em>
 <ul>
 <li>Local clinics that provided health services for all Quebecers.</li>
+<li>Reduce wait times in hospitals.</li>
 <li>Free standard health and social services
 <ul>
 <li>Such as vaccination and home care for seniors.</li>
@@ -4178,9 +4207,7 @@ Allow for the development of a Canadian identity as it would move away from Brit
 <tr><td>Form of Representation</td><td>Election through <a href="chapter3/4.html#universal-suffrage">universal suffrage</a> or representation based on custom</td><td>Elected through universal suffrage every two years</td></tr>
 <tr><td>Role of Government</td><td>Play political role, oversees administrative duties, education and health</td><td>Assumes the same responsibilities of municipalities (Local government)</td></tr>
 </tbody></table>
-<ul>
-<li>The table represents governance based on the most common elements. Many nuances and local community and cultural variations exist.</li>
-</ul>
+<p>* The table represents governance based on the most common elements. Many nuances and local community and cultural variations exist.</p>
 </li>
 <li>
 <p>Political self-determination among Indigenous peoples</p>
@@ -4198,7 +4225,7 @@ Allow for the development of a Canadian identity as it would move away from Brit
 </li>
 <li><em>Office of Native Claims</em> <em>(1974)</em>
 <ul>
-<li>More efficiently manage Indigenous claims</li>
+<li>More efficiently manage Indigenous land claims</li>
 </ul>
 </li>
 </ul>
@@ -4227,9 +4254,9 @@ Allow for the development of a Canadian identity as it would move away from Brit
 </li>
 <li>
 <p>Details of the agreement</p>
-<table><thead><tr><th>Signatories</th><th>Main Agreements</th></tr></thead><tbody>
-<tr><td>The Inuit and the Cree of Baie-James<br />Governments of Quebec and Canada<br />James Bay Development Corporation<br />James Bay Energy Corporation<br />Hydro-Quebec</td><td>Protection of the culture and traditional way of life of the Inuit and the Cree<br />Creation of two school boards that take into account the particular cultural aspects of the Inuit and the Cree in developing the education program<br />Concession of exclusive hunting and fishing rights to Indigenous peoples in certain parts of the territory<br />Recognition of the right of Indigenous peoples to self-government through the creation of autonomous political institutions<br />Financial compensation of approximately $225 million to Indigenous peoples<br />Recognition of the role of Indigenous peoples in the exploitation and environmental management of the natural resources in Quebec's Far North<br />Resumption of hydroelectric construction<br />Opportunity for the government to exploit mining, hydroelectric and forest resources in the region.</td></tr>
-</tbody></table>
+<p>| Signatories                                                  | Main Agreements                                              |
+| ------------------------------------------------------------ | ------------------------------------------------------------ |
+| The Inuit and the Cree of Baie-James<br />Governments of Quebec and Canada<br />James Bay Development Corporation<br />James Bay Energy Corporation<br />Hydro-Quebec | Protection of the culture and traditional way of life of the Inuit and the Cree<br />Creation of two school boards that take into account the particular cultural aspects of the Inuit and the Cree in developing the education program<br />Concession of exclusive hunting and fishing rights to Indigenous peoples in certain parts of the territory<br />Recognition of the right of Indigenous peoples to self-government through the creation of autonomous political institutions<br />Financial compensation of approximately $225 million to Indigenous peoples<br />Recognition of the role of Indigenous peoples in the exploitation and environmental management of the natural resources in Quebec's Far North<br />Resumption of hydroelectric construction<br />Opportunity for the government to exploit mining, hydroelectric and forest resources in the region. |</p>
 </li>
 </ul>
 <h3><a class="header" href="#october-crises-1970" id="october-crises-1970">October Crises <em>(1970)</em></a></h3>
@@ -4294,7 +4321,7 @@ Allow for the development of a Canadian identity as it would move away from Brit
 </li>
 <li>Grievances with employers
 <ul>
-<li>Working conditions were worse than those in the public sector (hours, benefits, salary)</li>
+<li>Working conditions were worse than those in the private sector (hours, benefits, salary)</li>
 <li>Reduce the gap between the economic advantages of public and private employees.</li>
 </ul>
 </li>
@@ -4668,6 +4695,961 @@ Allow for the development of a Canadian identity as it would move away from Brit
 <p>A vote where the population makes a decision, the decision is made if over 50% of the votes agree on one side.</p>
 <h4><a class="header" href="#refugees" id="refugees">Refugees</a></h4>
 <p>People escaping from wars, conflicts or natural disasters.</p>
+<h1><a class="header" href="#societal-choices-in-contemporary-quebec" id="societal-choices-in-contemporary-quebec">Societal Choices in Contemporary Quebec</a></h1>
+<h3><a class="header" href="#parts-2" id="parts-2">Parts</a></h3>
+<ul>
+<li><a href="chapter4/./1.html">Political Choices in Contemporary Quebec</a></li>
+<li><a href="chapter4/./2.html">Economic Choices in Contemporary Quebec</a></li>
+<li><a href="chapter4/./3.html">Social Choices in Contemporary Quebec</a></li>
+<li><a href="chapter4/./4.html">Cultural Choices in Contemporary Quebec</a></li>
+</ul>
+<h1><a class="header" href="#political-choices-in-contemporary-quebec" id="political-choices-in-contemporary-quebec">Political Choices in Contemporary Quebec</a></h1>
+<h3><a class="header" href="#quebecs-political-status-within-canada" id="quebecs-political-status-within-canada">Quebec's Political Status Within Canada</a></h3>
+<ul>
+<li>Referendum on sovereignty-association <em>(1980)</em>
+<ul>
+<li>Objective
+<ul>
+<li>Quebec would be an independent state <em>(autonomous from Canada)</em> <em>(Political)</em></li>
+<li>Maintain economic ties with Canada <em>(Economic)</em></li>
+</ul>
+</li>
+<li>Federal government's perspective
+<ul>
+<li>Federal government did not want Quebec to become a sovereign state.</li>
+<li>Proposed <a href="chapter4/1.html#renewed-federalism">renewed federalism</a>.</li>
+</ul>
+</li>
+<li>Result
+<ul>
+<li>Defeat <em>(40.4%|59.6%)</em></li>
+<li>Quebec did not separate from Canada</li>
+<li>Constitutional negotiations could resume</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Patriation of the Constitution <em>(1982)</em>
+<ul>
+<li>Previous meetings failed
+<ul>
+<li>Federal government wanted to <a href="chapter4/1.html#unilateral">unilaterally</a> patriate the constitution.
+<ul>
+<li>Failed because the provinces were against this decision.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Consensus
+<ul>
+<li>9 provinces agreed to patriate the constitution and an amendment formula.</li>
+<li>Quebec was not invited to the negotiations and did not sign the constitution.</li>
+</ul>
+</li>
+<li><em>Constitution Act</em> <em>(April 17, 1982)</em>
+<ul>
+<li>Queen Elizabeth came to Ottawa and signed to officially patriate the constitution.</li>
+</ul>
+</li>
+<li>Quebec's position in Canada
+<ul>
+<li>Quebec's status in Canada was not defined, since the province did not sign the constitution.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><em>Meech Lake Accord</em> <em>(1987)</em>
+<ul>
+<li>PM Mulroney wanted to include Quebec in the constitution.
+<ul>
+<li>Wanted to reconcile with Quebec, who was under new leadership <em>(Liberal|Robert Bourassa)</em></li>
+<li>Agreed to resume negotiations to include Quebec in the constitution.</li>
+</ul>
+</li>
+<li>Five conditions Quebec demanded to include them in the constitution.
+<ul>
+<li>Quebec would be recognised as a distinct society.</li>
+<li>Quebec would have the right to veto any constitutional amendments that could affect their rights.</li>
+<li>Provinces had to right to withdraw from any federal program that interfered with their jurisdictions.</li>
+<li>Quebec would have more power to appoint judges to the Supreme Court of Canada.</li>
+<li>Constitution would grant Quebec power in the area of immigration.
+<ul>
+<li>Full control over immigration in the province.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Issues in Canada
+<ul>
+<li>All other provinces had to unanimously agree to Quebec's demands.</li>
+</ul>
+</li>
+<li>Result
+<ul>
+<li>Two provinces did not approve the <em>Meech Lake Accord</em>.
+<ul>
+<li>Manitoba
+<ul>
+<li>As First Nations had not been consulted or recognised during the constitutional discussions.</li>
+</ul>
+</li>
+<li>Newfoundland
+<ul>
+<li>Did not vote after it failed in Manitoba</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><em>Belanger-Campeau Commission</em> <em>(1990)</em>
+<ul>
+<li>Goal
+<ul>
+<li>Discuss Quebec's political and constitutional future.</li>
+</ul>
+</li>
+<li>Recommendations
+<ul>
+<li>Re-define Quebec's political status</li>
+<li>A referendum on sovereignty-association to be held
+<ul>
+<li>To put pressure on the federal government to come up with new constitutional proposals.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><em>Allaire Report</em> <em>(1991)</em>
+<ul>
+<li>Goal
+<ul>
+<li>Examine the possible solutions if constitutional negotiations failed once again.</li>
+</ul>
+</li>
+<li>Demands
+<ul>
+<li>More political autonomy for Quebec</li>
+<li>If not granted, Quebec should hold a referendum on sovereignty-association.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><em>Charlottetown Accord</em> <em>(1992)</em>
+<ul>
+<li>Quebec's distinct society would be recognised in the new constitution.</li>
+<li>Referendum were held to get Canada's opinion
+<ul>
+<li>Canadians were asked to give their opinion on the Charlottetown Accord.</li>
+<li>Results
+<ul>
+<li>Defeat <em>(45.7%|54.3%)</em> in Canada</li>
+<li>Defeat <em>(43.3%|56.7%)</em> in Quebec
+<ul>
+<li>Intended a referendum on sovereignty-association in the near future instead.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Founding of the <em>Action démocratique du Québec</em> <em>(ADQ)</em>
+<ul>
+<li>New political party created by Jean Allaire to compete with the Liberals in Quebec.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Quebec Independence Referendum <em>(1995)</em>
+<ul>
+<li>Cause
+<ul>
+<li>Failure of the <em>Charlottetown Accord</em> <em>(1992)</em>.</li>
+<li>Some Quebecers wanted to have a referendum on sovereignty.</li>
+</ul>
+</li>
+<li>PQ and <em>Bloc Quebecois</em>
+<ul>
+<li>Parti Quebecois won the provincial election in 1994.
+<ul>
+<li>Under Premier Jacques Parizeau.</li>
+</ul>
+</li>
+<li>Bloc Quebecois formed the official opposition of the Liberal Party of Canada in the House of Commons <em>(Federal party that supported sovereignty)</em>.</li>
+</ul>
+</li>
+<li>Consensus
+<ul>
+<li>Parti Quebecois, Bloc Quebecois and ADQ supported the independence of Quebec.</li>
+<li>Liberal Party of Quebec and Canada and the Progressive Conservative Party of Canada opposed the independence of Quebec.</li>
+</ul>
+</li>
+<li>Results
+<ul>
+<li>Defeat <em>(50.58%|49.42%)</em></li>
+</ul>
+</li>
+<li>Aftermath
+<ul>
+<li>Sovereignty movement slowed down and the federal government negotiated terms with Quebec to try and include them in the constitution.</li>
+<li>Quebec has still not signed the constitution.
+<ul>
+<li>Because their demands have not been met.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><em>Clarity Act</em> <em>(2000)</em>
+<ul>
+<li>Jean Chretien questioned the legality of Quebec separating from Canada in the Supreme Court.
+<ul>
+<li>Supreme Court said that Quebec was within its right to hold a referendum on sovereignty, as long as the question asked was clear.</li>
+<li>The House of Commons has the power to decide whether a proposed referendum question was considered clear before public vote.</li>
+</ul>
+</li>
+<li>Majority of votes had to be 50%+ in order for sovereignty process to begin.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3><a class="header" href="#indigenous-rights" id="indigenous-rights">Indigenous Rights</a></h3>
+<ul>
+<li><em>Constitution Act</em> <em>(1982)</em>
+<ul>
+<li>Section 35 recognised the ancestral rights of Indigenous people in Canada.
+<ul>
+<li>Indigenous people were defined as <em>Indian, Inuit and Metis</em>.</li>
+<li>Called on the courts to ensure that the ancestral rights and land rights were respected.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><em>Bill to Amend the Indian Act</em> <em>(C-31)</em> <em>(1985)</em>
+<ul>
+<li>Indian Status
+<ul>
+<li>First Nations women married to non-First Nations mem were given their and their children's Indian status back.</li>
+</ul>
+</li>
+<li>Enfranchisement
+<ul>
+<li>Enfranchisement clauses eliminated from the <em>Indian Act</em>.</li>
+</ul>
+</li>
+<li>Bands
+<ul>
+<li>Bands could determine their memberships.
+<ul>
+<li>Bands were comprised of chiefs and band councillors of a specific nation.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Recognition of Indigenous Nations by the Quebec government <em>(1985)</em>
+<ul>
+<li>Allowed Indigenous people to negotiate agreements with the Quebec government on six rights
+<ul>
+<li>Right to autonomy in Quebec</li>
+<li>Right to preserve their cultures, languages and traditions</li>
+<li>Right to own and manage land</li>
+<li>Right to manage wildlife resources in their (hunting and fishing) territory</li>
+<li>Right to participate in Quebec's economy, economic development and profit from it</li>
+<li>Right to develop as distinct nations, with their own identities</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Oka Crises <em>(1990)</em>
+<ul>
+<li>Mohawk of Kanesatake opposed a construction project and expansion of a golf course on Mohawk claimed territory (burial grounds)</li>
+<li>A group of Mohawk, called the Warriors, set up a roadblock between Kanesatake and Oka</li>
+<li>Provincial police got involved in the situation, with one being killed by friendly fire.</li>
+<li>Mohawk of Kahnawake blocked access to the Mercier Bridge, as a sign of solidarity.</li>
+<li>The Canadian army was called in to deal with the situation, leading to many months of conflict and arrests between the two groups.</li>
+<li>Eventually, both development projects were cancelled. 
+<ul>
+<li>However, this lead to increased tension between Indigenous groups and the federal gov’t, as land claims and ancestral rights were called into question.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><em>Royal Commission on Aboriginal Peoples</em> <em>(1991)</em>
+<ul>
+<li>To study relations between Indigenous peoples, the federal government and Canadian society.
+<ul>
+<li>Need to find solutions to problems between the groups.</li>
+<li>Commission was proposed of four Indigenous members and three non-Indigenous members.</li>
+</ul>
+</li>
+<li>Recommendations
+<ul>
+<li>Indigenous people should be able to participate in the creation of policies that affect them.</li>
+<li>The powers necessary for the right to self-determination.</li>
+</ul>
+</li>
+<li>Very few of the recommendations were implemented.</li>
+</ul>
+</li>
+<li>Creation of Nunavut <em>(1999)</em>
+<ul>
+<li>Third territory in Canada.</li>
+<li>85% population are Inuits.</li>
+<li>Governed autonomously.
+<ul>
+<li>First time a country changed its borders at the request of an Indigenous group.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><em>Peace of the Braves</em> <em>(2002)</em>
+<ul>
+<li>Agreement between Cree and Quebec government to facilitate the creation of hydroelectric, forestry and mining developments in Quebec.
+<ul>
+<li>Cree would receive CAD70 million per year until 2052.</li>
+<li>Government was granted permission to develop hydroelectric projects on their territory.</li>
+<li>Promote economic development in the region</li>
+<li>Encourage the development of Cree business in the region</li>
+<li>Recognised Cree's ancestral rights to the land</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><em>Truth and Reconciliation Commission of Canada</em>  <em>(TRC)</em> <em>(2008)</em>
+<ul>
+<li>To inform all Canadians about what Indigenous children endured in residential schools.</li>
+<li>Testimonies were heard from over 6000 First Nations, Inuits and Metis that attended the residential schools as children.</li>
+</ul>
+</li>
+</ul>
+<h3><a class="header" href="#international-relations" id="international-relations">International Relations</a></h3>
+<ul>
+<li>Canadian participation in world organisations
+<ul>
+<li>To play an active role in trying to solve global issues <em>(climate change, national conflicts, poverty)</em>.</li>
+<li>United Nations
+<ul>
+<li>Canada sends soldiers for peacekeeping mission around the world
+<ul>
+<li>Haiti</li>
+<li>Rwanda</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Other organisations
+<ul>
+<li>NATO
+<ul>
+<li>(Military) alliance of 28 countries.</li>
+<li>Attack on one NATO member means an attack on all NATO members.</li>
+</ul>
+</li>
+<li>G7
+<ul>
+<li>Common ground on global issues</li>
+</ul>
+</li>
+<li>G20
+<ul>
+<li>Ensure the stability of financial markets and promote economic cooperation</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Threat of terrorism
+<ul>
+<li>September 11, 2001
+<ul>
+<li>Canada joined the war against terrorism and al-Qaeda (with the US).</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h1><a class="header" href="#definitions-22" id="definitions-22">Definitions</a></h1>
+<h4><a class="header" href="#renewed-federalism" id="renewed-federalism">Renewed Federalism</a></h4>
+<p>Consider the demands of Quebec with regard to their status in Canada.</p>
+<h4><a class="header" href="#unilateral" id="unilateral">Unilateral</a></h4>
+<p>Making a decision without consultation <em>(of the provincial governments)</em>.</p>
+<h1><a class="header" href="#economic-choices-in-contemporary-quebec" id="economic-choices-in-contemporary-quebec">Economic Choices in Contemporary Quebec</a></h1>
+<h3><a class="header" href="#1980s-recession-and-impact" id="1980s-recession-and-impact">1980s Recession and Impact</a></h3>
+<ul>
+<li>Economic recession -&gt; fewer exports to the US.
+<ul>
+<li>Sectors of the economy
+<ul>
+<li>Primary sector in decline
+<ul>
+<li>Many companies closed operations and people lost their jobs.</li>
+</ul>
+</li>
+<li>Secondary sector in decline
+<ul>
+<li>Many companies closed operations and people lost their jobs.</li>
+</ul>
+</li>
+<li>Tertiary sector growing
+<ul>
+<li>More job opportunities in the service sector (financial services, business services, telecommunications).</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Unemployment rates increased by nearly 9% <em>(1973-1983)</em>
+<ul>
+<li>Decreased purchasing power.</li>
+<li>Decrease in consumption of goods and services.</li>
+</ul>
+</li>
+<li>Mortgage <em>(interest)</em> rates increased from 17% to 20%.
+<ul>
+<li>People could not afford their homes and were forced to give them to the bank.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Funding of social programs
+<ul>
+<li>Welfare state -&gt; government finances social programs</li>
+<li>Forced the provincial government to go into debt in order to pay for the programs and services that they had to provide to the population.
+<ul>
+<li>Unemployment rates increased -&gt; less tax revenue for the government to spend on programs and services.</li>
+</ul>
+</li>
+<li>Perspectives
+<ul>
+<li><em>(Some Quebecers believe that)</em> the government should increase corporate taxes to finance government programs and services.</li>
+<li><em>(Some Quebecers believe that)</em> the government should reduce funding for social programs and intervene less in the economy.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="chapter4/2.html#neo-liberalism">Neo-liberalism</a>
+<ul>
+<li>Budget cuts to reduce debt -&gt; privatisation of crown corporations.
+<ul>
+<li>Air Canada and Petro Canada shares were sold to reduce debts for the federal government.
+<ul>
+<li>Reduced the number of public sector employees and their wages and benefits.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Privatisation of certain services by the provincial government.
+<ul>
+<li>Private health care sector emerged.</li>
+<li>Quebecers with financial means could now pay for faster access to health care by going to private clinics.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3><a class="header" href="#globalisation-of-the-economy" id="globalisation-of-the-economy">Globalisation of The Economy</a></h3>
+<ul>
+<li>Free trade agreements
+<ul>
+<li>Goals
+<ul>
+<li>Increase exports</li>
+<li>Have access to new markets and products</li>
+<li>Trade with no restriction (tariffs).</li>
+</ul>
+</li>
+<li><em>Canada - United States Free Trade Agreement</em> <em>(CUSFTA)</em> <em>(1988)</em>
+<ul>
+<li>Eliminated custom duties on most products between the two countries.</li>
+</ul>
+</li>
+<li><em>North American Free Trade Agreement</em> <em>(NAFTA)</em> <em>(1992)</em>
+<ul>
+<li>Signed in 1992, enforced in 1994.</li>
+</ul>
+</li>
+<li>Consequences for the economy
+<ul>
+<li>Increase in exports</li>
+<li>Canada competes in the global market</li>
+<li>Quebec's industries could now sell products and services to foreigners.
+<ul>
+<li>Puts Quebec on the global market.</li>
+</ul>
+</li>
+<li>Acceleration of globalisation
+<ul>
+<li>Quebec and Canada are now exposed to new markets and competitors worldwide.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Impact of globalisation
+<ul>
+<li>Economy
+<ul>
+<li>Competition among countries
+<ul>
+<li>Countries can sell similar at varying prices.</li>
+</ul>
+</li>
+<li>Delocalisation
+<ul>
+<li>Many businesses relocated their plants and factories to countries with lower production and operation costs <em>(no minimum wage and price of materials)</em>
+<ul>
+<li>Less job opportunities for Quebec and Canada's citizens.</li>
+<li>People are underpaid and exploited in other parts of the world.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Quebec Inc.
+<ul>
+<li>Goal
+<ul>
+<li>Develop small-medium sized businesses in Quebec and provide job opportunities for its citizens.</li>
+<li>To counter the effects of delocalisation in the province.
+<ul>
+<li>Ex: Ubisoft</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Merging of companies
+<ul>
+<li>Many Quebec businesses merged in order to maintain their competitiveness on the global market.
+<ul>
+<li>Ex: SNC-Lavalin</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3><a class="header" href="#the-economy-and-social-justice-movements" id="the-economy-and-social-justice-movements">The Economy And Social Justice Movements</a></h3>
+<ul>
+<li>Emergence of <a href="chapter4/2.html#civil-society">civil society</a> groups.
+<ul>
+<li>Denounced globalisation (and its effects) and neo-liberal ideas.</li>
+<li><em>Act to Combat Poverty and Social Exclusion</em> <em>(2002)</em>
+<ul>
+<li>Find solutions to the increase in social inequalities in Quebec (gap between the rich and the poor had increased).</li>
+</ul>
+</li>
+<li><em>Social Solidarity Program</em> <em>(2007)</em>
+<ul>
+<li>To provide financial assistance to people who could not work.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Social economy projects
+<ul>
+<li>To develop a sense of community and create quality jobs for communities experiencing economic and social difficulties.</li>
+<li>Benefits to the economy
+<ul>
+<li>Created sustainable jobs for people that often found themselves unemployed.</li>
+<li>Fight poverty and social exclusion (for people with criminal records).</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3><a class="header" href="#a-hrefchapter42htmldevitalisationdevitalisationa-of-communities" id="a-hrefchapter42htmldevitalisationdevitalisationa-of-communities"><a href="chapter4/2.html#devitalisation">Devitalisation</a> of Communities</a></h3>
+<ul>
+<li>Causes of devitalisation
+<ul>
+<li>Weak economic activity</li>
+<li>Aging population with low levels of education and low income</li>
+<li>Many people on unemployment insurance or social assistance</li>
+<li>Decrease in the labour force
+<ul>
+<li>Provincial government has stepped in to try and stimulate the economy by providing financial support (ex: Murdochville).</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="chapter4/2.html#single-industry-town">Single-industry towns</a>
+<ul>
+<li>Economic recession in single-industry towns
+<ul>
+<li>Closure of mines or industries</li>
+<li>Depletion of a resource or the decision to stop exploiting resources</li>
+<li>Solution: diversification of economy
+<ul>
+<li>Less dependence on a single industry.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Migratory movements
+<ul>
+<li>Youth in small communities have to leave for better education and employment opportunities.</li>
+</ul>
+</li>
+<li>Local services
+<ul>
+<li>Combination of a declining population and aging population will result in the closure of many local services (schools, stores, restaurants, etc. ).</li>
+</ul>
+</li>
+<li>Declining political weight in these regions
+<ul>
+<li>Combined many communities into one large region for provincial elections.</li>
+<li>Eliminated some political districts due to low population.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Issues for new farmers
+<ul>
+<li>Farming income depends on climate, making it a financial risk for new farmers.</li>
+<li>More profitable to sell rural land than to transfer it to a young person who would like to take it over.</li>
+<li>Cost of farmland has increased rapidly; making it more difficult to take loans from banks to purchase the land.</li>
+</ul>
+</li>
+<li></li>
+</ul>
+<h1><a class="header" href="#definitions-23" id="definitions-23">Definitions</a></h1>
+<h4><a class="header" href="#neo-liberalism" id="neo-liberalism">Neo-liberalism</a></h4>
+<p>Current of thought that challenged state intervention in the economy and society, promotes free competition and privatisation. </p>
+<h4><a class="header" href="#civil-society" id="civil-society">Civil Society</a></h4>
+<p>Individuals who are not political decision-makers.</p>
+<h4><a class="header" href="#devitalisation" id="devitalisation">Devitalisation</a></h4>
+<p>Socio-economic phenomenon by which a city or municipality simultaneously experience a declining and aging population, fewer investments and local services are available, youth are leaving for bigger cities. </p>
+<h4><a class="header" href="#single-industry-town" id="single-industry-town">Single-industry Town</a></h4>
+<p>A town whose economy depends on the exploitation of a natural resource by one or a few companies (only one real economic activity).</p>
+<h1><a class="header" href="#social-choices-in-contemporary-quebec" id="social-choices-in-contemporary-quebec">Social Choices in Contemporary Quebec</a></h1>
+<h3><a class="header" href="#aging-population-in-quebec" id="aging-population-in-quebec">Aging Population in Quebec</a></h3>
+<ul>
+<li>Aging population
+<ul>
+<li>Falling birth rate (smaller families, women are in the workforce).</li>
+<li>Rising number of seniors (aging baby boomers)</li>
+</ul>
+</li>
+<li>Aging population and life expectancy
+<ul>
+<li>Consequences for the labour force
+<ul>
+<li>Too many retired people that cannot be replaced in the labour force.</li>
+</ul>
+</li>
+<li>Consequences for public services
+<ul>
+<li>More money being spent on health care services</li>
+</ul>
+</li>
+<li>Government spending increased
+<ul>
+<li>Obligation of being a welfare state</li>
+<li>Need to take care of senior population</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3><a class="header" href="#family-policy-and-immigration" id="family-policy-and-immigration">Family Policy And Immigration</a></h3>
+<ul>
+<li>Measures to increase the population: <em>the family policy</em>.
+<ul>
+<li>Child support through a tax credit</li>
+<li>Promoting a work-family balance through various measures (aid maternity and paternity leave).</li>
+<li>Subsidised child care services</li>
+<li>Financial support (for low-income families)</li>
+<li>Measures for families with special needs.</li>
+</ul>
+</li>
+<li>Immigration policy
+<ul>
+<li>Since 1980, the population of Quebec increased the fastest through immigration.</li>
+<li><em>Let's Build Quebec Together</em> <em>(1990)</em>
+<ul>
+<li>Policy on immigration and integration that presented Quebec as:
+<ul>
+<li>Society in which French is the common language of public life</li>
+<li>Democratic society where participation and contribution of all are expected and encouraged.</li>
+<li><a href="chapter4/3.html#pluralist">Pluralist</a> society that ensures respect for fundamental democratic values.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><em>Canada-Quebec Accord on Immigration</em> <em>(1991)</em>
+<ul>
+<li>Quebec as its own criteria for selecting immigrants</li>
+<li>Integration of new immigrants (French courses)</li>
+</ul>
+</li>
+<li>Protection for immigrants
+<ul>
+<li>Canadian Charter of Rights and Freedoms</li>
+</ul>
+</li>
+<li><em>Together We Are Quebec</em>
+<ul>
+<li>Establish more effective practices for selecting, <a href="chapter4/3.html#francize">francizing</a> and integrating immigrants, in order to participate in Quebec society.</li>
+</ul>
+</li>
+<li>Debate on religious neutrality
+<ul>
+<li>Recommendation in 2008: prohibition of wearing religious symbols by state employees in positions of authority
+<ul>
+<li>Recommendation was not implemented by the Charest government.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3><a class="header" href="#living-conditions-for-indigenous-peoples" id="living-conditions-for-indigenous-peoples">Living Conditions For Indigenous Peoples</a></h3>
+<ul>
+<li>Social Issues
+<ul>
+<li>Lower wages, increased unemployment <em>(compared to non-Indigenous communities)</em>
+<ul>
+<li>Difficult access to housing</li>
+<li>Inability to have a healthy and balanced diet</li>
+</ul>
+</li>
+<li>Health and life expectancy
+<ul>
+<li>Significantly lower than non-Indigenous people</li>
+</ul>
+</li>
+<li>Socio-cultural issues
+<ul>
+<li>Trauma from residential schools and loss of family ties, cultural practices and traditional way of life
+<ul>
+<li>Increased mortality rate <em>(suicide)</em>.</li>
+<li>Increased addiction</li>
+<li>Sexual and physical abuse <em>(especially towards women)</em>.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3><a class="header" href="#gender-equality" id="gender-equality">Gender Equality</a></h3>
+<ul>
+<li>Tragedy at <em>Ecole Polytechnique</em> <em>(1989)</em>
+<ul>
+<li>Marc Lepine killed 13 female students and one employee.</li>
+<li>Lepine then killed himself and left a letter stating that he had targeted feminist activists.</li>
+</ul>
+</li>
+<li><em>Decriminalisation of Abortion</em> <em>(1988)</em>
+<ul>
+<li>Only became free in 2008.</li>
+</ul>
+</li>
+<li><em>Family Patrimony Act</em> <em>(1989)</em>
+<ul>
+<li>Legal equality among couples united through marriage
+<ul>
+<li>All property and assets are divided equally</li>
+</ul>
+</li>
+<li>Equal division of property after divorce</li>
+</ul>
+</li>
+<li><em>Pay Equity Act</em> <em>(1996)</em>
+<ul>
+<li>Women earned an average of 30% less than men <em>(working the same job)</em>.</li>
+<li>Businesses with 10 employees or more had to pay equal wages for jobs of equal value by 2001
+<ul>
+<li>1/2 businesses had fulfilled this obligation <em>(2006)</em>.</li>
+<li>5/6 businesses had fulfilled this obligation <em>(2016)</em>.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><em>Act Instituting Civil Unions and Establishing New Rules of Filiation</em> <em>(2002)</em>
+<ul>
+<li>New type of union allowing every couple, whether same-sex or opposite-sex, to form an official union.</li>
+<li>Both partners have the same rights and obligations as couples united by civil marriage.</li>
+</ul>
+</li>
+<li><em>Act Respecting the Governance of State-Owned Enterprises</em> <em>(2006)</em>
+<ul>
+<li>Board of directors of crown corporations were composed of equal numbers of women and men by 2011.
+<ul>
+<li>9/22 crown corporations had not reached 50% women <em>(2006)</em>.</li>
+<li>All 22 crown corporations reached an average of 52% women <em>(2016)</em>.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><em>Work-family Balance</em> <em>(2010)</em>
+<ul>
+<li>Governments and employees must find ways to ensure a better balance between the professional family responsibilities of workers
+<ul>
+<li>Subsidised child care centres</li>
+</ul>
+</li>
+<li><em>Quebec Parental Insurance Plan</em> <em>(QPIP)</em>
+<ul>
+<li>Allow eligible workers can receive income replacement benefits when they take parental, paternity or adoption leave.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h1><a class="header" href="#definitions-24" id="definitions-24">Definitions</a></h1>
+<h4><a class="header" href="#pluralist" id="pluralist">Pluralist</a></h4>
+<p>Open to a diversity of options and behaviours in a society.</p>
+<h4><a class="header" href="#francize" id="francize">Francize</a></h4>
+<p>Learn French and promote integration into Francophone environments. </p>
+<h1><a class="header" href="#cultural-choices-in-contemporary-quebec" id="cultural-choices-in-contemporary-quebec">Cultural Choices in Contemporary Quebec</a></h1>
+<h3><a class="header" href="#langauge-issue" id="langauge-issue">Langauge Issue</a></h3>
+<ul>
+<li>Language of signage
+<ul>
+<li><em>Bill 101</em> <em>(1997)</em> protects the French language.
+<ul>
+<li>All signage must be in only in French.</li>
+<li>Children of immigrant parents must attend French schools.</li>
+<li>Challenged in the Supreme Court: violation of freedom of expression.
+<ul>
+<li>Bourassa invoked the <a href="chapter4/4.html#override-clause">override clause</a> with <em>Bill 178</em>.</li>
+<li><em>Bill 178</em> <em>(1988)</em>
+<ul>
+<li>All outdoor signage must be only in French, but indoor signage can have French and another language.</li>
+<li>French must in a larger font than English.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><em>Bill 86</em> <em>(1993)</em>
+<ul>
+<li>Protests over Bill 178 <em>(by the anglophone community for violation of freedom of expression)</em>.</li>
+<li>All signage must have both languages but French must be visually predominant.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Language of instruction
+<ul>
+<li><em>Bill 101</em> <em>(1977)</em>
+<ul>
+<li>Children of immigrant families must attend French public school until the end of high school.</li>
+</ul>
+</li>
+<li>Loopholes: <em>bridging schools</em> and certificate of eligibility.
+<ul>
+<li>Bridging schools: parents registered their children in non-subsidised private schools for one year and could send their children to a public English school.
+<ul>
+<li>Bridging school loophole blocked <em>(2002-09)</em></li>
+</ul>
+</li>
+<li><em>Certificate of eligibility</em> <em>(2010)</em>
+<ul>
+<li>Minimum of 3 year attendance at non-subsidised English elementary school allows application for a certificate of eligibility.</li>
+<li>The certificate eligibility grants the right to attend English public high school.</li>
+<li>The provincial government has the say on the granting of certificates.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Indigenous languages
+<ul>
+<li>Not recognised by Canada's constitution
+<ul>
+<li>Indigenous languages could disappear over time.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3><a class="header" href="#cultural-industry" id="cultural-industry">Cultural Industry</a></h3>
+<ul>
+<li><em>Politique Culturelle de Québec</em> <em>(1992)</em>
+<ul>
+<li>Promote Quebec culture worldwide.</li>
+<li>Focuses on
+<ul>
+<li>Affirmation of cultural identity</li>
+<li>Support for arts and creators</li>
+<li>Citizen access and participation in cultural life</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Cultural crown corporations
+<ul>
+<li><em>CALQ</em> <em>(1994)</em>
+<ul>
+<li>To support the dissemination of individual artists and organisations in Quebec, Canada and abroad.</li>
+</ul>
+</li>
+<li><em>SODEC</em> <em>(1995)</em>
+<ul>
+<li>To promote and support the creation, production and influence of Quebec culture.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Dissemination of culture worldwide
+<ul>
+<li>Quebec artists are given a platform to show their works.</li>
+</ul>
+</li>
+</ul>
+<h3><a class="header" href="#information-society" id="information-society">Information Society</a></h3>
+<ul>
+<li>Growth of an <a href="chapter4/4.html#information-society">information society</a></li>
+<li>Increased internet use in Quebec
+<ul>
+<li>E-commence and social networks are moving towards a new standard.</li>
+</ul>
+</li>
+<li><em>Digital Cultural Plan</em> <em>(2014)</em>
+<ul>
+<li>To enable artistic communities to reap the economic benefits of the digital world and remain competitive in global markets.</li>
+</ul>
+</li>
+<li><em>Copyright Modernisation Act</em> <em>(2015)</em>
+<ul>
+<li>Internet providers and search engines send a notice of infringement to subscribers downloading copyright-protected content.</li>
+</ul>
+</li>
+<li>Mass media and news
+<ul>
+<li>24 hour news networks <em>(CBC and CTV)</em></li>
+<li>Concentration of mass media
+<ul>
+<li>Integrating old forms of mass media <em>(newspapers, radio, television)</em> with the internet.</li>
+<li>Larger enterprises bought out smaller mass media outlets
+<ul>
+<li>Homogenisation of information</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h1><a class="header" href="#definitions-25" id="definitions-25">Definitions</a></h1>
+<h4><a class="header" href="#override-clause" id="override-clause">Override Clause</a></h4>
+<p>Allowed the provincial government to not apply a section of the Canadian Charter of Rights and freedoms.</p>
+<h4><a class="header" href="#information-society-1" id="information-society-1">Information Society</a></h4>
+<p>Integration of technology into society.</p>
 <h1><a class="header" href="#articles" id="articles">Articles</a></h1>
 <p>Articles are short texts written that aim to provide understanding of history using knowledge outside of the textbook. </p>
 <p>Other students are encouraged to contribute in this section if they have knowledge in relevant areas. </p>
@@ -4769,6 +5751,14 @@ Allow for the development of a Canadian identity as it would move away from Brit
 
         
 
+        
+
+        
+        
+        
+        <script type="text/javascript">
+            window.playpen_copyable = true;
+        </script>
         
 
         

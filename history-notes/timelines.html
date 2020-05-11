@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html lang="en" class="sidebar-visible no-js">
+<html lang="en" class="sidebar-visible no-js light">
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
@@ -34,11 +34,11 @@
 
         
     </head>
-    <body class="light">
+    <body>
         <!-- Provide site root to javascript -->
         <script type="text/javascript">
             var path_to_root = "";
-            var default_theme = "light";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "light" : "light";
         </script>
 
         <!-- Work around some values being stored in localStorage wrapped in quotes -->
@@ -62,8 +62,11 @@
             var theme;
             try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
             if (theme === null || theme === undefined) { theme = default_theme; }
-            document.body.className = theme;
-            document.querySelector('html').className = theme + ' js';
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
         </script>
 
         <!-- Hide / unhide sidebar before it is displayed -->
@@ -80,7 +83,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="affix"><a href="index.html">Introduction</a></li><li class="affix"><a href="timelines.html" class="active">Timelines</a></li><li><a href="chapter1/index.html"><strong aria-hidden="true">1.</strong> The Formation of the Canadian Federal System</a></li><li><ol class="section"><li><a href="chapter1/1.html"><strong aria-hidden="true">1.1.</strong> The Act of Union</a></li><li><a href="chapter1/2.html"><strong aria-hidden="true">1.2.</strong> Consequences of The Act of Union</a></li><li><a href="chapter1/3.html"><strong aria-hidden="true">1.3.</strong> Responsible Government</a></li><li><a href="chapter1/4.html"><strong aria-hidden="true">1.4.</strong> Toward a Canadian Federation</a></li><li><a href="chapter1/5.html"><strong aria-hidden="true">1.5.</strong> Economic Context and US Relations</a></li><li><a href="chapter1/6.html"><strong aria-hidden="true">1.6.</strong> Moving Towards Confederation</a></li><li><a href="chapter1/7.html"><strong aria-hidden="true">1.7.</strong> British North America Act</a></li><li><a href="chapter1/8.html"><strong aria-hidden="true">1.8.</strong> First Phase of Industrialisation</a></li><li><a href="chapter1/9.html"><strong aria-hidden="true">1.9.</strong> Forestry and Agricultural Industries</a></li><li><a href="chapter1/10.html"><strong aria-hidden="true">1.10.</strong> Working Conditions and Unions</a></li><li><a href="chapter1/11.html"><strong aria-hidden="true">1.11.</strong> Population Movements</a></li><li><a href="chapter1/12.html"><strong aria-hidden="true">1.12.</strong> Presence of the Catholic Church</a></li><li><a href="chapter1/13.html"><strong aria-hidden="true">1.13.</strong> Role of Women and Culture in Quebec</a></li><li><a href="chapter1/14.html"><strong aria-hidden="true">1.14.</strong> Development of the Canadian Federation: Western Expansion</a></li><li><a href="chapter1/15.html"><strong aria-hidden="true">1.15.</strong> First Nations in the Dominion of Canada</a></li><li><a href="chapter1/16.html"><strong aria-hidden="true">1.16.</strong> Macdonald and Mercier's Government</a></li></ol></li><li><a href="chapter2/index.html"><strong aria-hidden="true">2.</strong> Nationalisms and the Autonomy of Canada</a></li><li><ol class="section"><li><a href="chapter2/1.html"><strong aria-hidden="true">2.1.</strong> Laurier's Liberal Government</a></li><li><a href="chapter2/2.html"><strong aria-hidden="true">2.2.</strong> Second Phase of Industrialisation (1896-1929)</a></li><li><a href="chapter2/3.html"><strong aria-hidden="true">2.3.</strong> Transformation of Society in The Beginning of The 20th Century</a></li><li><a href="chapter2/4.html"><strong aria-hidden="true">2.4.</strong> World War I</a></li><li><a href="chapter2/5.html"><strong aria-hidden="true">2.5.</strong> Inter-war Period</a></li><li><a href="chapter2/6.html"><strong aria-hidden="true">2.6.</strong> World War II</a></li></ol></li><li><a href="chapter3/index.html"><strong aria-hidden="true">3.</strong> The Modernisation of Quebec and the Quiet Revolution</a></li><li><ol class="section"><li><a href="chapter3/1.html"><strong aria-hidden="true">3.1.</strong> Duplessis Government</a></li><li><a href="chapter3/2.html"><strong aria-hidden="true">3.2.</strong> The Quiet Revolution (1960-1970)</a></li><li><a href="chapter3/3.html"><strong aria-hidden="true">3.3.</strong> Quebec Society During the 1960s</a></li><li><a href="chapter3/4.html"><strong aria-hidden="true">3.4.</strong> Quebec Society Under The Bourassa Government (1970-1976)</a></li><li><a href="chapter3/5.html"><strong aria-hidden="true">3.5.</strong> Quebec society under Levesque (1976-1980)</a></li></ol></li><li><a href="articles/index.html"><strong aria-hidden="true">4.</strong> Articles</a></li><li><ol class="section"><li><a href="articles/economic_cycles.html"><strong aria-hidden="true">4.1.</strong> Economic Cycles</a></li></ol></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="index.html">Introduction</a></li><li class="chapter-item expanded affix "><a href="timelines.html" class="active">Timelines</a></li><li class="chapter-item expanded "><a href="chapter1/index.html"><strong aria-hidden="true">1.</strong> The Formation of the Canadian Federal System</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="chapter1/1.html"><strong aria-hidden="true">1.1.</strong> The Act of Union</a></li><li class="chapter-item expanded "><a href="chapter1/2.html"><strong aria-hidden="true">1.2.</strong> Consequences of The Act of Union</a></li><li class="chapter-item expanded "><a href="chapter1/3.html"><strong aria-hidden="true">1.3.</strong> Responsible Government</a></li><li class="chapter-item expanded "><a href="chapter1/4.html"><strong aria-hidden="true">1.4.</strong> Toward a Canadian Federation</a></li><li class="chapter-item expanded "><a href="chapter1/5.html"><strong aria-hidden="true">1.5.</strong> Economic Context and US Relations</a></li><li class="chapter-item expanded "><a href="chapter1/6.html"><strong aria-hidden="true">1.6.</strong> Moving Towards Confederation</a></li><li class="chapter-item expanded "><a href="chapter1/7.html"><strong aria-hidden="true">1.7.</strong> British North America Act</a></li><li class="chapter-item expanded "><a href="chapter1/8.html"><strong aria-hidden="true">1.8.</strong> First Phase of Industrialisation</a></li><li class="chapter-item expanded "><a href="chapter1/9.html"><strong aria-hidden="true">1.9.</strong> Forestry and Agricultural Industries</a></li><li class="chapter-item expanded "><a href="chapter1/10.html"><strong aria-hidden="true">1.10.</strong> Working Conditions and Unions</a></li><li class="chapter-item expanded "><a href="chapter1/11.html"><strong aria-hidden="true">1.11.</strong> Population Movements</a></li><li class="chapter-item expanded "><a href="chapter1/12.html"><strong aria-hidden="true">1.12.</strong> Presence of the Catholic Church</a></li><li class="chapter-item expanded "><a href="chapter1/13.html"><strong aria-hidden="true">1.13.</strong> Role of Women and Culture in Quebec</a></li><li class="chapter-item expanded "><a href="chapter1/14.html"><strong aria-hidden="true">1.14.</strong> Development of the Canadian Federation: Western Expansion</a></li><li class="chapter-item expanded "><a href="chapter1/15.html"><strong aria-hidden="true">1.15.</strong> First Nations in the Dominion of Canada</a></li><li class="chapter-item expanded "><a href="chapter1/16.html"><strong aria-hidden="true">1.16.</strong> Macdonald and Mercier's Government</a></li></ol></li><li class="chapter-item expanded "><a href="chapter2/index.html"><strong aria-hidden="true">2.</strong> Nationalisms and the Autonomy of Canada</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="chapter2/1.html"><strong aria-hidden="true">2.1.</strong> Laurier's Liberal Government</a></li><li class="chapter-item expanded "><a href="chapter2/2.html"><strong aria-hidden="true">2.2.</strong> Second Phase of Industrialisation (1896-1929)</a></li><li class="chapter-item expanded "><a href="chapter2/3.html"><strong aria-hidden="true">2.3.</strong> Transformation of Society in The Beginning of The 20th Century</a></li><li class="chapter-item expanded "><a href="chapter2/4.html"><strong aria-hidden="true">2.4.</strong> World War I</a></li><li class="chapter-item expanded "><a href="chapter2/5.html"><strong aria-hidden="true">2.5.</strong> Inter-war Period</a></li><li class="chapter-item expanded "><a href="chapter2/6.html"><strong aria-hidden="true">2.6.</strong> World War II</a></li></ol></li><li class="chapter-item expanded "><a href="chapter3/index.html"><strong aria-hidden="true">3.</strong> The Modernisation of Quebec and the Quiet Revolution</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="chapter3/1.html"><strong aria-hidden="true">3.1.</strong> Duplessis Government</a></li><li class="chapter-item expanded "><a href="chapter3/2.html"><strong aria-hidden="true">3.2.</strong> The Quiet Revolution (1960-1970)</a></li><li class="chapter-item expanded "><a href="chapter3/3.html"><strong aria-hidden="true">3.3.</strong> Quebec Society During the 1960s</a></li><li class="chapter-item expanded "><a href="chapter3/4.html"><strong aria-hidden="true">3.4.</strong> Quebec Society Under The Bourassa Government (1970-1976)</a></li><li class="chapter-item expanded "><a href="chapter3/5.html"><strong aria-hidden="true">3.5.</strong> Quebec society under Levesque (1976-1980)</a></li></ol></li><li class="chapter-item expanded "><a href="chapter4/index.html"><strong aria-hidden="true">4.</strong> Societal Choices in Contemporary Quebec</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="chapter4/1.html"><strong aria-hidden="true">4.1.</strong> Political Choices in Contemporary Quebec</a></li><li class="chapter-item expanded "><a href="chapter4/2.html"><strong aria-hidden="true">4.2.</strong> Economic Choices in Contemporary Quebec</a></li><li class="chapter-item expanded "><a href="chapter4/3.html"><strong aria-hidden="true">4.3.</strong> Social Choices in Contemporary Quebec</a></li><li class="chapter-item expanded "><a href="chapter4/4.html"><strong aria-hidden="true">4.4.</strong> Cultural Choices in Contemporary Quebec</a></li></ol></li><li class="chapter-item expanded "><a href="articles/index.html"><strong aria-hidden="true">5.</strong> Articles</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="articles/economic_cycles.html"><strong aria-hidden="true">5.1.</strong> Economic Cycles</a></li></ol></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -89,37 +92,36 @@
 
             <div class="page">
                 
-                <div id="menu-bar" class="menu-bar">
-                    <div id="menu-bar-sticky-container">
-                        <div class="left-buttons">
-                            <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
-                                <i class="fa fa-bars"></i>
-                            </button>
-                            <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
-                                <i class="fa fa-paint-brush"></i>
-                            </button>
-                            <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
-                                <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
-                                <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
-                                <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
-                                <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
-                                <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
-                            </ul>
-                            
-                            <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
-                                <i class="fa fa-search"></i>
-                            </button>
-                            
-                        </div>
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                        
+                    </div>
 
-                        <h1 class="menu-title">History Notes</h1>
+                    <h1 class="menu-title">History Notes</h1>
 
-                        <div class="right-buttons">
-                            <a href="print.html" title="Print this book" aria-label="Print this book">
-                                <i id="print-button" class="fa fa-print"></i>
-                            </a>
-                            
-                        </div>
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        
                     </div>
                 </div>
 
@@ -183,13 +185,13 @@
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
                 
-                    <a href="index.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="index.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
                 
 
                 
-                    <a href="chapter1/index.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next" href="chapter1/index.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
                 
@@ -199,6 +201,14 @@
 
         
 
+        
+
+        
+        
+        
+        <script type="text/javascript">
+            window.playpen_copyable = true;
+        </script>
         
 
         
