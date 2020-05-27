@@ -3,55 +3,122 @@
 <head>
     <meta charset="UTF-8">
     <title>Shikio Maker</title>
-    <link rel="stylesheet" href="shikio-maker.css"/>
+    <link rel="stylesheet" href="main.css"/>
     <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <template id="period-template">
+    <div class="period period-card shadow">
+        <div class="block-element">
+            <input type="text" class="block-text-input marker-title-input" placeholder="Title"/>
+        </div>
+        <div class="block-element">
+            <input type="text" class="block-text-input marker-start-input" placeholder="Start"/>
+        </div>
+        <div class="block-element">
+            <input type="text" class="block-text-input marker-end-input" placeholder="End"/>
+        </div>
+        <div class="block-element">
+            <input type="text" class="block-text-input marker-row-input" placeholder="Row"/>
+        </div>
+        <div class="block-element">
+            <input type="text" class="block-text-input marker-colour-input" placeholder="Colour"/>
+        </div>
+        <div class="block-element">
+            <input type="button" class="block-button marker-remove-button" value="Remove"/>
+        </div>
+    </div>
+    </template>
+    <template id="event-template">
+    <div class="event event-card shadow">
+        <div class="block-element">
+            <input type="text" class="block-text-input marker-title-input" placeholder="Title"/>
+        </div>
+        <div class="block-element">
+            <input type="text" class="block-text-input marker-time-input" placeholder="Time"/>
+        </div>
+        <div class="block-element">
+            <input type="text" class="block-text-input marker-row-input" placeholder="Row"/>
+        </div>
+        <div class="block-element">
+            <input type="text" class="block-text-input marker-link-input" placeholder="Link"/>
+        </div>
+        <div class="block-description">
+            <textarea class="block-text-input description marker-description-input" placeholder="Description"></textarea>
+        </div>
+        <div class="block-element">
+            <input type="button" class="block-button marker-remove-button" value="Remove"/>
+        </div>
+    </div>
+    </template>
 </head>
 <body>
-<script src="https://kaminingyou.github.io/shikio.js"></script>
-<script src="shikio-maker.js"></script>
-<div class="fill" style="position: relative; user-select: none;">
-    <div class="pane left-pane" align="center" id="timeline">
-        <input class="text-input" type="number" placeholder="Start">
-        <input class="text-input" type="number" placeholder="End">
-        <input class="text-input" type="number" placeholder="Interval">
-        <input class="text-input" type="number" placeholder="Width/Mark">
-        <input class="text-input" type="number" placeholder="Rows">
-        <input class="text-input" placeholder="Title">
-        <input class="button" type="button" value="Generate" onclick="generateTimeline()">
+    <div class="fill timeline" id="timeline-container"></div>
+    <div class="fill fixed overlay" id="editor" hidden>
+        <div class="container title-container">
+            <div class="fill relative">
+                <input type="text" class="title-input shadow" placeholder="Enter Title Here" id="title-input"/>
+            </div>
+        </div>
+        <div class="container space"></div>
+        <div class="container content-container">
+            <div class="box information-box shadow">
+                <div class="block-element">
+                    <input type="text" class="block-text-input" placeholder="JSON" id="json-input"/>
+                </div>
+                <div class="block-element">
+                    <input type="button" class="block-button" value="Load" id="load-button"/>
+                </div>
+                <div class="block-element">
+                    <input type="text" class="block-text-input" placeholder="From" id="start-input"/>
+                </div>
+                <div class="block-element">
+                    <input type="text" class="block-text-input" placeholder="To" id="end-input"/>
+                </div>
+                <div class="block-element">
+                    <input type="text" class="block-text-input" placeholder="Interval" id="interval-input"/>
+                </div>
+                <div class="block-element">
+                    <input type="text" class="block-text-input" placeholder="Width Per Mark" id="width-input"/>
+                </div>
+                <div class="block-element">
+                    <input type="text" class="block-text-input" placeholder="Rows" id="rows-input"/>
+                </div>
+                <div class="block-element">
+                    <input type="button" class="block-button" value="Generate" id="generate-button"/>
+                </div>
+                <div class="block-element">
+                    <input type="text" class="block-text-input" placeholder="Generated JSON" id="json-output" readonly/>
+                </div>
+                <div class="block-element">
+                    <input type="text" class="block-text-input" placeholder="Generated SVG" id="svg-output" readonly/>
+                </div>
+            </div>
+            <div class="box periods-box shadow">
+                <div class="title">Periods</div>
+                <div class="content"><div class="content-fill" id="periods">
+                    <div class="period add-period shadow" id="add-period">
+                        <div>+</div>
+                    </div>
+                </div>
+                <div class="content-overlay"></div>
+                </div>
+            </div>
+            <div class="box events-box shadow">
+                <div class="title">Events</div>
+                <div class="content"><div class="content-fill" id="events">
+                    <div class="event add-event shadow" id="add-event">
+                        <div>+</div>
+                    </div>
+                </div>
+                <div class="content-overlay"></div>
+                </div>
+            </div>
+        </div>
+        <div class="container space"></div>
     </div>
-    <div class="pane periods-pane">
-        <table class="horizontal-fill" cellspacing="0">
-            <tbody id="periodsList"><tr>
-                <td>Start</td>
-                <td>End</td>
-                <td>Row</td>
-                <td>Colour</td>
-                <td>Title</td>
-                <td onclick="addPeriod()">+</td>
-            </tr>
-            </tbody>
-        </table>
+    <div class="fixed edit">
+        <div class="toggle-button shadow" id="toggle-button"><div>Edit</div></div>
     </div>
-    <div class="pane events-pane">
-        <table class="horizontal-fill" cellspacing="0">
-            <tbody id="eventsList"><tr>
-                <td>Time</td>
-                <td>Row</td>
-                <td>Title</td>
-                <td>Link</td>
-                <td>Description</td>
-                <td onclick="addEvent()">+</td>
-            </tr>
-            </tbody>
-        </table>
-    </div>
-    <div class="pane timeline-pane" id="timelineDisplay"></div>
-    <div class="pane code-pane">
-        <div>JSON link</div>
-        <textarea id="link" readonly></textarea>
-        <div>HTML</div>
-        <textarea id="html" readonly></textarea>
-    </div>
-</div>
+    <script src="https://kaminingyou.github.io/shikio.js"></script>
+    <script src="./main.js"></script>
 </body>
 </html>
