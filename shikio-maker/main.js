@@ -89,7 +89,7 @@ function add_event(title, time, row, description, link){
         );
     }
     
-    document.getElementById("events").insertBefore(clone, document.getElementById("add-event"));
+    document.getElementById("events-html").insertBefore(clone, document.getElementById("add-event"));
 }
 
 document.getElementById("add-period").addEventListener("click", function(){ add_period(); });
