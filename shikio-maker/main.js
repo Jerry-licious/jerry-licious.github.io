@@ -209,9 +209,11 @@ toggle_button.addEventListener("click", function () {
     editor_on = !editor_on;
     if (editor_on) {
         toggle_button.style.opacity = 1.0;
+        toggle_button.firstElementChild.innerHTML = "Hide";
         editor.style.display = "block";
     } else {
         toggle_button.style.opacity = 0.5;
+        toggle_button.firstElementChild.innerHTML = "Edit";
         editor.style.display = "none";
     }
 });
