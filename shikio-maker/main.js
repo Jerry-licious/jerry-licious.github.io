@@ -187,18 +187,19 @@ document.getElementById("load-button").addEventListener("click", function () {
     }
     
     for (period of timeline.timePeriods) {
-        console.log(period);
         add_period(period.label, period.start, period.end, period.row, period.colour);
     }
     for (event of timeline.events) {
         add_event(event.title, event.time, event.row, event.description, event.link);
     }
     
-    const inputs = document.getElementsByClassName("text-input");
-    for (input of inputs) {
-        if (input.classList.contains("invalid-input")) {
-            check_number(input);
-        }
+    const tagged_invalids = document.getElementsByClassName("invalid-input");
+    const invalids = [];
+    for (input of tagged_invalids) {
+        invalids.push(input);
+    }
+    for (input of invalids) {
+        check_number(input);
     }
 });
 
