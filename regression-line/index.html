@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+        <meta content="utf-8" http-equiv="encoding">
+
+        <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet"> 
+        <link href="https://fonts.googleapis.com/css2?family=Lora:ital@0;1&display=swap" rel="stylesheet"> 
+        <link rel="stylesheet" href="style.css">
+
+        <template id="dataset-entry">
+            <tr class="dataset-entry">
+                <td>
+                    <input type="text" class="x-input invalid-input">
+                </td>
+                <td>
+                    <input type="text" class="y-input invalid-input">
+                </td>
+            </tr>
+        </template>
+    </head>
+
+    <body>
+        <div class="fill">
+            <div class="input-container">
+                <div class="dataset" align="center">
+                    <table>
+                    <tbody id="dataset">
+                        <tr>
+                            <th>x</th>
+                            <th>y</th>
+                        </tr>
+                        <tr id="empty-entry">
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                    </table>
+                </div>
+                <div class="button" id="median-median-button">
+                    <span>Median-Median</span>
+                </div>
+                <div class="button" id="mayer-button">
+                    <span>Mayer</span>
+                </div>
+            </div>
+            <div id="plot-container">
+                <div id="help-button"><div>?</div></div>
+                <div id="rule"></div>
+            </div>
+        </div>
+        <div class="fill" id="help-menu" align="center" hidden>
+            <div class="help-box">
+                <p>Click on an empty field in the table to start editing.</p>
+                <p>←, ↑, →, ↓: Traverse around the table.</p>
+                <p>Space/Enter: Go to the next field.</p>
+                <p>Backspace: Delete the current field.</p>
+            </div>
+        </div>
+        <script src="main.js"></script>
+    </body>
+</html>

@@ -1,0 +1,253 @@
+.fill {
+    width: 100vw;
+    height: 100vh;
+
+    position: absolute;
+}
+
+.input-container {
+    width: 15%;
+    min-width: 200px;
+
+    height: 90%;
+    min-height: 450px;
+
+    display: inline-block;
+    top: 5%;
+    left: 5%;
+
+    position: absolute;
+}
+
+.dataset {
+    width: 100%;
+
+    height: calc(min(80%, 100% - 4.5vh - 90px));
+    overflow-y: scroll;
+
+    box-shadow: 0px 0px 3px;
+}
+
+.dataset table {
+    top: 2.5%;
+    position: relative;
+
+    width: 90%;
+
+    border-collapse: collapse;
+
+    overflow-x: hidden;
+}
+
+.dataset table tr {
+    height: calc(max(6vh, 40px));
+    transition-duration: 0.2s;
+}
+
+.dataset table tr:first-child {
+    border-bottom: 1px solid black;
+}
+
+.dataset table tr:not(:last-child):not(:first-child) {
+    border-bottom: 1px solid #d9d9d9;
+}
+
+.dataset table th:first-child, 
+.dataset table td:first-child {
+    border-right: 1px solid black;
+}
+
+.dataset table th {
+    font-family: 'Lora', serif;
+    user-select: none;
+
+    font-size: calc(max(3vh, 20px));
+}
+
+.dataset table td {
+    height: 100%;
+    padding: 0 0 0 0;
+}
+
+.dataset input {
+    width: 100%;
+    height: 100%;
+    display: block;
+
+    padding: 0 0 0 0;
+    border: none;
+
+    font-size: calc(max(3vh, 20px));
+    text-align: center;
+
+    transition-duration: 0.1s;
+
+    font-family: 'Lora', serif;
+}
+
+.dataset input:focus {
+    background-color: #f2f2f2;
+}
+
+.dataset .invalid-input {
+    background-color: #ffe6e6;
+}
+
+.dataset .invalid-input:focus {
+    background-color: #ffcccc;
+}
+
+.dataset .mayer-group1 {
+    background-color: #c0a18b;
+}
+.dataset .mayer-group2 {
+    background-color: #ffc59f;
+}
+
+.dataset .median-median-group1 {
+    background-color: #738573;
+}
+
+.dataset .median-median-group2 {
+    background-color: #90cf90;
+}
+
+.dataset .median-median-group3 {
+    background-color: #bee2be;
+}
+
+.dataset input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.dataset input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.input-container .button {
+    width: 100%;
+    height: 7.5%;
+    min-height: 45px;
+
+    margin-top: 2.25vh;
+    position: relative;
+
+    box-shadow: 0px 0px 3px;
+
+    font-size: calc(max(3vh, 20px));
+
+    user-select: none;
+    text-align: center;
+
+    transition-duration: 0.15s;
+    transition-property: background-color;
+}
+
+.input-container .button:hover {
+    background-color: #f2f2f2;
+}
+
+.input-container .button:active {
+    background-color: #dadada;
+}
+
+.input-container .button span {
+    top: 20%;
+    position: relative;
+}
+
+#plot-container {
+    width: 70%;
+    min-width: 930px;
+
+    height: 90%;
+    min-height: 450px;
+
+    display: inline-block;
+    top: 5%;
+    left: calc(max(25%, 330px));
+
+    position: absolute;
+    
+    box-shadow: 0px 0px 3px;
+}
+
+#plot-container svg {
+    position: absolute;
+
+    z-index: 0;
+}
+
+#rule {
+    left: calc(max(6vh, 40px) + 2%);
+    top: 2%;
+    position: absolute;
+
+    z-index: 1;
+
+    font-family: 'Lora', serif;
+    font-size: calc(max(4vh, 28px));
+
+    user-select: none;
+}
+
+#help-button {
+    width: calc(max(6vh, 40px));
+    height: calc(max(6vh, 40px));
+    position: absolute;
+
+    z-index: 1;
+    text-align: center;
+
+    background-color: #e4e4e4;
+
+    transition-duration: 0.15s;
+}
+
+#help-button:hover {
+    background-color: #c9c9c9;
+}
+#help-button:active {
+    background-color: #acacac;
+}
+
+#help-button div {
+    top: calc(max(0.3vh, 3px));
+    position: relative;
+
+    font-family: 'Lora', serif;
+    font-size: calc(max(4vh, 28px));
+
+    user-select: none;
+}
+
+#help-menu {
+    background-color: rgba(0, 0, 0, 0.2);
+    z-index: 2;
+
+    min-height: 600px;
+    min-width: 1000px;
+}
+
+.help-box {
+    width: 40%;
+    height: 40%;
+
+    padding: 2.5% 2.5% 2.5% 2.5%;
+
+    background-color: white;
+
+    top: 25%;
+    position: relative;
+
+    border: 5px solid rgba(0, 0, 0, 0.4);
+    border-radius: 5px;
+
+    text-align: left;
+
+    user-select: none;
+
+    font-family: 'Lora', serif;
+    font-size: calc(max(2vh, 18px));
+}
