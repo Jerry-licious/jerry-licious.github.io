@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Twitch Meet
-// @downloadURL http://jerry-licious.github.io/twitchmeet.user.js
-// @updateURL http://jerry-licious.github.io/twitchmeet.user.js
+// @downloadURL https://github.com/Jerry-Licious/jerry-licious.github.io/raw/master/twitchmeet.user.js
+// @updateURL https://github.com/Jerry-Licious/jerry-licious.github.io/raw/master/twitchmeet.user.js
 // @namespace    http://tampermonkey.net/
 // @version      0.1
 // @description  Replaces references to certain Twitch emotes in Google Meet messages with their corresponding emotes.
