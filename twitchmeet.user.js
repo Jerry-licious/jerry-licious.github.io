@@ -3,7 +3,7 @@
 // @downloadURL  https://github.com/Jerry-Licious/jerry-licious.github.io/raw/master/twitchmeet.user.js
 // @updateURL    https://github.com/Jerry-Licious/jerry-licious.github.io/raw/master/twitchmeet.user.js
 // @namespace    http://tampermonkey.net/
-// @version      0.2.0
+// @version      0.2.1
 // @description  Replaces references to certain Twitch emotes in Google Meet messages with their corresponding emotes. Replace math expressions in messages with rendered equations using Katex.
 // @author       Jerry
 // @match        https://meet.google.com/*
@@ -30,12 +30,39 @@
     // Create the style class for emote image elements.
     const styleElement = document.createElement("style");
     styleElement.type = "text/css";
-    styleElement.innerHTML = `.emote-image {
+    styleElement.innerHTML = `
+    .emote-container {
         height: 20px;
         display: inline-block;
         top: 5px;
         position: relative;
-    }`;
+    }
+    .emote-container img {
+        height: 100%;
+        position: relative;
+        z-index: 0;
+    }
+    .emote-container span {
+        position: absolute;
+        z-index: 1;
+
+        color: white;
+        background-color: rgba(0, 0, 0, 0.5);
+        top: 110%;
+        left: -50%;
+
+        border-radius: 3px;
+        padding: 3px;
+
+        transition-duration: 0.2s;
+        opacity: 0;
+        display: none;
+    }
+    .emote-container:hover span {
+        opacity: 1;
+        display: inline;
+    }
+    `;
     document.head.appendChild(styleElement);
 
     const emoteIndex = new Map([
@@ -110,7 +137,7 @@
                 emoteIndex.forEach(function(url, name) {
                     targetElement.innerHTML =
                         targetElement.innerHTML.replaceAll(name,
-                        `<img src="${url}" class="emote-image"/>`);
+                        `<span class="emote-container"><img src="${url}"/><span>${name}</span></span>`);
                 });
 
                 // Replace contents wrapped around $s with rendered math
