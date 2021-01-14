@@ -1,10 +1,10 @@
 // ==UserScript==
 // @name         Twitch Meet
-// @downloadURL https://github.com/Jerry-Licious/jerry-licious.github.io/raw/master/twitchmeet.user.js
-// @updateURL https://github.com/Jerry-Licious/jerry-licious.github.io/raw/master/twitchmeet.user.js
+// @downloadURL  https://github.com/Jerry-Licious/jerry-licious.github.io/raw/master/twitchmeet.user.js
+// @updateURL    https://github.com/Jerry-Licious/jerry-licious.github.io/raw/master/twitchmeet.user.js
 // @namespace    http://tampermonkey.net/
-// @version      0.1
-// @description  Replaces references to certain Twitch emotes in Google Meet messages with their corresponding emotes.
+// @version      0.2.0
+// @description  Replaces references to certain Twitch emotes in Google Meet messages with their corresponding emotes. Replace math expressions in messages with rendered equations using Katex.
 // @author       Jerry
 // @match        https://meet.google.com/*
 // @grant        none
@@ -12,6 +12,20 @@
 
 (function() {
     'use strict';
+    // Load Katex files.
+    function loadJavaScript(src) {
+        let scriptElement = document.createElement("script");
+        scriptElement.setAttribute("src", src);
+        document.body.appendChild(scriptElement);
+    }
+    function loadStyleSheet(src) {
+        let linkElement = document.createElement("link");
+        linkElement.setAttribute("rel", "stylesheet");
+        linkElement.setAttribute("href", src);
+        document.head.appendChild(linkElement);
+    }
+    loadStyleSheet("https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css");
+    loadJavaScript("https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js");
 
     // Create the style class for emote image elements.
     const styleElement = document.createElement("style");
@@ -79,7 +93,7 @@
             if (element.classList.contains("oIy2qc") ||
                 element.classList.contains("ZNiiKc") ||
                 element.classList.contains("GDhqjd")) {
-                var targetElement = element;
+                let targetElement = element;
                 // This style class is used when a new person/"group" of messages
                 // is created.
                 if (element.classList.contains("GDhqjd")) {
@@ -91,7 +105,6 @@
                     // To prevent this from happening, the inner element will be
                     // extracted first.
                     targetElement = element.getElementsByClassName("oIy2qc")[0];
-                    console.log(targetElement);
                 }
                 // Replace the occurance of emotes in it with images.
                 emoteIndex.forEach(function(url, name) {
@@ -99,6 +112,16 @@
                         targetElement.innerHTML.replaceAll(name,
                         `<img src="${url}" class="emote-image"/>`);
                 });
+
+                // Replace contents wrapped around $s with rendered math
+                // expressions from Katex.
+                targetElement.innerHTML = targetElement.innerHTML
+                    .replace(/\$.+\$/g, function(match) {
+                        return katex.renderToString(
+                            match.substring(1, match.length - 1), {
+                            throwOnError: false
+                        })
+                    });
             }
         }
         return originalAppendChild.call(this, element);
