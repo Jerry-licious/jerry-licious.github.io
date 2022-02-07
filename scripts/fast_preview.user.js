@@ -5,7 +5,7 @@
 // @version      0.2
 // @description  Adds a 'fast preview' button to WeBWorK that allows you to preview your submissions without having to reload the page.
 // @author       Jerry Li
-// @match        *webwork2*
+// @match        http://*.marianopolis.com/webwork2/*
 // @grant        none
 // ==/UserScript==
 
