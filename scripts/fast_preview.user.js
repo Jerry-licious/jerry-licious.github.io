@@ -2,10 +2,10 @@
 // @name         WeBWorK Fast Preview
 // @downloadURL  https://github.com/Jerry-Licious/jerry-licious.github.io/raw/master/scripts/fast_preview.user.js
 // @updateURL    https://github.com/Jerry-Licious/jerry-licious.github.io/raw/master/scripts/fast_preview.user.js
-// @version      0.1
+// @version      0.2
 // @description  Adds a 'fast preview' button to WeBWorK that allows you to preview your submissions without having to reload the page.
 // @author       Jerry Li
-// @match        http://wwserver.marianopolis.com/*
+// @match        *webwork2*
 // @grant        none
 // ==/UserScript==
 
