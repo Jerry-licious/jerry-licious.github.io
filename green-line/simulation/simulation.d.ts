@@ -1,0 +1,35 @@
+import { Good } from './good';
+import { Market } from './market';
+import { Order } from './order';
+import { Individual } from './actors/individual';
+import { Firm } from './actors/firm';
+import { EconomicActor } from './actors/economic-actor';
+import { Widget } from '../widget/widgets/widget';
+import { Government } from './actors/government';
+export declare class Simulation extends Widget<number> {
+    government: Government;
+    individuals: Individual[];
+    resources: Firm[];
+    factories: Firm[];
+    markets: Map<Good, Market>;
+    timeElapsed: number;
+    currentRealGDP: number;
+    realGDPHistory: number[];
+    labourFactor: number;
+    resourcesFactor: number;
+    physicalCapitalFactor: number;
+    humanCapitalFactor: number;
+    technologyFactor: number;
+    constructor();
+    get goodsSold(): Good[];
+    getAllActors(): EconomicActor[];
+    getAllFirms(): Firm[];
+    placeBuyOrder(order: Order): void;
+    placeSellOrder(order: Order): void;
+    tick(): void;
+    recordGDP(): void;
+    awardMoney(): void;
+    determineFactorsOfProduction(): void;
+    gossip(): void;
+    updateElement(state?: any): void;
+}

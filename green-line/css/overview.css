@@ -1,0 +1,109 @@
+.game .overview {
+    flex-grow: 1;
+    padding: 10px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: stretch;
+
+    gap: 10px;
+}
+
+.game .overview .graph-container {
+    flex-grow: 1;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: stretch;
+
+    padding: 20px;
+    border-radius: 20px;
+    background: var(--surface);
+
+    gap: 10px;
+}
+
+.game .overview .graph-container .title {
+    font-size: 40px;
+    font-weight: bold;
+
+    display: flex;
+    justify-content: center;
+}
+
+.game .overview .graph-container .ct-chart {
+    flex-grow: 1;
+}
+
+.game .overview .info {
+    flex-shrink: 0;
+    flex-grow: 0;
+
+    height: var(--overview-info-height);
+
+    display: flex;
+    flex-direction: row;
+    justify-content: stretch;
+
+    gap: 10px;
+}
+
+.game .overview .factors {
+    width: var(--overview-info-height);
+    padding: 20px;
+    border-radius: 20px;
+
+    background: var(--surface);
+
+    /* Vertical flexbox */
+    display: flex;
+    flex-direction: column;
+    align-content: stretch;
+
+    gap: 10px;
+}
+
+.game .factors .title {
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.game .factors .list {
+    flex-grow: 1;
+
+    /* Vertical flexbox */
+    display: flex;
+    flex-direction: column;
+    align-content: stretch;
+
+    gap: 5px;
+}
+
+.game .factors .list .entry {
+    font-size: 30px;
+
+    /* Horizontal flexbox */
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: center;
+
+    gap: 5px;
+}
+
+.game .factors .list .entry .progress-bar {
+    flex-grow: 1;
+    background: var(--surface-high);
+    border-radius: 5px;
+
+    /* Horizontal flexbox */
+    display: flex;
+    flex-direction: row;
+    align-content: stretch;
+}
+
+.game .factors .list .entry .progress-bar .progress {
+    width: 50%;
+    background: var(--primary);
+    border-radius: 5px;
+}
