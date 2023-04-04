@@ -23,4 +23,5 @@ export declare namespace Config {
         };
     };
     const governmentIncomeModifier = 0.2;
+    const governmentBuyGoalIncrement = 30;
 }
