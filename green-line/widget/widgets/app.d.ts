@@ -1,14 +1,16 @@
 import { Widget } from './widget';
 import { MainMenu } from './main-menu';
 import { Game } from './game/game';
-import { Tutorial } from './tutorial';
+import { InfoPanel } from './info-panel';
 export declare class App extends Widget<null> {
     mainMenu: MainMenu;
-    tutorial: Tutorial;
+    concepts: InfoPanel;
+    tutorial: InfoPanel;
     game: Game;
     constructor();
     play(): void;
-    openTutorial(): void;
+    openConceptsPanel(): void;
+    openTutorialPanel(): void;
     menu(): void;
     updateElement(state: null | undefined): void;
 }
