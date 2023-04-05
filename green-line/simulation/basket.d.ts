@@ -7,7 +7,8 @@ export declare class Basket extends Map<Good, number> {
     static firmInitialInventory(): Basket;
     addGood(good: Good, amount?: number): void;
     subtract(other: Basket): Basket;
-    subtractMut(other: Basket): void;
+    removeItemsFrom(other: Basket): void;
     hasNegatives(): boolean;
+    isEmpty(): boolean;
     copy(): Basket;
 }

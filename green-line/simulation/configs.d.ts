@@ -12,8 +12,7 @@ export declare namespace Config {
     const specialisationFactor = 0.1;
     const lowestPossiblePrice = 0.01;
     const productionGoalVolatility = 5;
-    const firmTrackDays = 5;
-    const upgradeMultiplier = 1.58;
+    const upgradeMultiplier = 1.64;
     const dataMemory = 300;
     const graphConfigs: {
         showPoint: boolean;

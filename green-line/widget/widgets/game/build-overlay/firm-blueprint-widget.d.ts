@@ -6,6 +6,7 @@ export declare class FirmBlueprintWidget extends GameWidget<null> {
     blueprint: FirmBlueprint;
     overlay: FirmConstructionMenu;
     constructor(game: Game, blueprint: FirmBlueprint, overlay: FirmConstructionMenu);
+    buildFirm(): void;
     gameTick(): void;
     updateElement(state?: null): void;
 }

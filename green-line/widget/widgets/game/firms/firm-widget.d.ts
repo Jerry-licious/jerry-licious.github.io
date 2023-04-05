@@ -9,15 +9,18 @@ export declare class FirmWidget extends GameWidget<null> {
     upgradeStatus: Element;
     capacityBar: Element;
     upgradeButton: HTMLElement;
-    errorButton: Element;
+    errorMessage: Element;
+    errorButton: HTMLElement;
     constructor(firm: Firm, game: Game);
+    subsidiseFirm(): void;
     updateUpgradeStatus(): void;
     updateInputs(): void;
     updateOutputs(): void;
     updateCapacityBar(): void;
     updateButtons(): void;
+    getErrors(): string[];
     updateError(): void;
-    updateElement(state: null | undefined): void;
     gameTick(): void;
     upgradeAvailable(): boolean;
+    updateElement(state: null | undefined): void;
 }

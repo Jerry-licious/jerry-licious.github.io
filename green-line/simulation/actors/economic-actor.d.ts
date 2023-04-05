@@ -6,7 +6,7 @@ export declare abstract class EconomicActor {
     sellGoal: Map<Good, number>;
     expectedMarketPrices: Map<Good, number>;
     inventory: Basket;
-    constructor();
+    protected constructor();
     abstract setBuyGoals(simulation: Simulation): void;
     abstract setSellGoals(simulation: Simulation): void;
     placeSellOrders(simulation: Simulation): void;

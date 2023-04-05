@@ -8,10 +8,11 @@ export declare class Market {
     currentExchangeQuantity: number;
     exchangeQuantityHistory: number[];
     exchangePriceHistory: number[];
+    currentQuantitySupplied: number;
+    currentQuantityDemanded: number;
     constructor(good: Good);
     placeBuyOrder(order: Order): void;
     placeSellOrder(order: Order): void;
     process(): void;
     recordData(): void;
-    get recentExchangePrice(): number;
 }

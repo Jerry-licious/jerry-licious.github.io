@@ -14,18 +14,14 @@ export declare class Firm extends EconomicActor {
     startingTier: FirmTier;
     tier: FirmTier;
     finalTier: FirmTier;
-    productionOffset: number;
+    productionGoal: number;
     constructor(id: string, recipe: Recipe, startingTier: FirmTier, finalTier: FirmTier, consumesCoal: boolean, consumesElectricity: boolean, capacity: number);
-    get recipeCost(): number;
-    calculateProductionGoal(): number;
+    getProductionGoal(): number;
     setBuyGoals(simulation: Simulation): void;
     placeBuyOrders(simulation: Simulation): void;
     setSellGoals(simulation: Simulation): void;
     consumeGoods(): void;
     onSuccessfulSale(good: Good): void;
     updatePriceExpectationsBasedOnGoals(): void;
-    borrowedMoney: number;
-    borrowMoneyFromDemand(simulation: Simulation): void;
-    returnMoneyFromDemand(): void;
     setTier(tier: FirmTier): void;
 }

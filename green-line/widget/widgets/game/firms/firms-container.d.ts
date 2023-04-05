@@ -11,6 +11,6 @@ export declare class FirmsContainer extends GameWidget<null> {
     constructionMenu: FirmConstructionMenu;
     constructor(game: Game, firms: Firm[], addButton: boolean, blueprints: FirmBlueprint[]);
     updateWidgetList(): void;
-    updateElement(state: null | undefined): void;
     gameTick(): void;
+    updateElement(state: null | undefined): void;
 }
