@@ -11,11 +11,12 @@ export declare class Firm extends EconomicActor {
     id: string;
     consumesCoal: boolean;
     consumesElectricity: boolean;
+    convertToAssembly: boolean;
     startingTier: FirmTier;
     tier: FirmTier;
     finalTier: FirmTier;
     productionGoal: number;
-    constructor(id: string, recipe: Recipe, startingTier: FirmTier, finalTier: FirmTier, consumesCoal: boolean, consumesElectricity: boolean, capacity: number);
+    constructor(id: string, recipe: Recipe, startingTier: FirmTier, finalTier: FirmTier, consumesCoal: boolean, consumesElectricity: boolean, convertToAssembly: boolean, capacity: number);
     getProductionGoal(): number;
     setBuyGoals(simulation: Simulation): void;
     placeBuyOrders(simulation: Simulation): void;

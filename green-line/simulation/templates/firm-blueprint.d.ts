@@ -10,14 +10,16 @@ export declare class FirmBlueprint {
     cost: Basket;
     consumesCoal: boolean;
     consumesElectricity: boolean;
+    convertToAssembly: boolean;
     capacity: number;
-    constructor({ id, startingTier, finalTier, recipe, consumesCoal, consumesElectricity, cost, capacity }: {
+    constructor({ id, startingTier, finalTier, recipe, consumesCoal, consumesElectricity, convertToAssembly, cost, capacity }: {
         id: string;
         startingTier?: FirmTier;
         finalTier?: FirmTier;
         recipe: Recipe;
         consumesCoal?: boolean;
         consumesElectricity?: boolean;
+        convertToAssembly?: boolean;
         cost: Basket;
         capacity?: number;
     });
