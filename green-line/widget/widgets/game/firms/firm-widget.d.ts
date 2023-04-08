@@ -22,5 +22,6 @@ export declare class FirmWidget extends GameWidget<null> {
     updateError(): void;
     gameTick(): void;
     upgradeAvailable(): boolean;
+    getUpgradeWarning(): string;
     updateElement(state: null | undefined): void;
 }

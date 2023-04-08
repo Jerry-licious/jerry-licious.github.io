@@ -21,6 +21,6 @@ export declare namespace Config {
             showGrid: boolean;
         };
     };
-    const governmentIncomeModifier = 0.2;
+    const governmentIncomeModifier = 0.04;
     const governmentBuyGoalIncrement = 30;
 }

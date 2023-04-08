@@ -2,6 +2,7 @@ import { Good } from './good';
 export declare class Basket extends Map<Good, number> {
     money: number;
     constructor();
+    static withEntries(): Basket;
     static withItems(items: Map<Good, number>): Basket;
     static individualInitialInventory(): Basket;
     static firmInitialInventory(): Basket;
@@ -11,4 +12,6 @@ export declare class Basket extends Map<Good, number> {
     hasNegatives(): boolean;
     isEmpty(): boolean;
     copy(): Basket;
+    copyWithItemsOfInterest(items: Good[]): Basket;
+    listOfItems(): Good[];
 }
