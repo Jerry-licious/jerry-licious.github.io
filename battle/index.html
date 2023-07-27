@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+          rel="stylesheet">
+</head>
+<body>
+<div class="main">
+    <div class="page-title">Battle Calculator</div>
+    <div class="inputs">
+        <div class="unit-input red-container">
+            <div class="unit-title">
+                Attacker
+            </div>
+            <div class="fields">
+                <div class="field">
+                    <span class="material-icons">flash_on</span>
+                    <input type="number" placeholder="Attack" id="attackerAttack"/>
+                </div>
+                <div class="field">
+                    <span class="material-icons">shield</span>
+                    <input type="number" placeholder="Defence" id="attackerDefence"/>
+                </div>
+                <div class="field">
+                    <span class="material-icons">speed</span>
+                    <input type="number" placeholder="Initiative" id="attackerInitiative"/>
+                </div>
+                <div class="field">
+                    <span class="material-icons">favorite</span>
+                    <input type="number" placeholder="HP" id="attackerHP"/>
+                </div>
+            </div>
+            <div class="errors" id="attackerErrors">
+            </div>
+        </div>
+        <div class="unit-input blue-container">
+            <div class="unit-title">
+                Defender
+            </div>
+            <div class="fields">
+                <div class="field">
+                    <span class="material-icons">flash_on</span>
+                    <input type="number" placeholder="Attack" id="defenderAttack"/>
+                </div>
+                <div class="field">
+                    <span class="material-icons">shield</span>
+                    <input type="number" placeholder="Defence" id="defenderDefence"/>
+                </div>
+                <div class="field">
+                    <span class="material-icons">speed</span>
+                    <input type="number" placeholder="Initiative" id="defenderInitiative"/>
+                </div>
+                <div class="field">
+                    <span class="material-icons">favorite</span>
+                    <input type="number" placeholder="HP" id="defenderHP"/>
+                </div>
+            </div>
+            <div class="errors" id="defenderErrors"></div>
+        </div>
+    </div>
+    <div class="button-holder"><button id="fightButton">Fight!</button></div>
+    <div class="combat-result" id="result"></div>
+    <div class="outputs">
+        <div class="unit-output red-container">
+            <div class="unit-title">
+                Attacker
+            </div>
+            <div class="fields">
+                <div class="field">
+                    <span class="material-icons">flash_on</span>
+                    <span id="resultAttackerAttack"></span>
+                </div>
+                <div class="field">
+                    <span class="material-icons">shield</span>
+                    <span id="resultAttackerDefence"></span>
+                </div>
+                <div class="field">
+                    <span class="material-icons">speed</span>
+                    <span id="resultAttackerInitiative"></span>
+                </div>
+                <div class="field">
+                    <span class="material-icons">favorite</span>
+                    <span id="resultAttackerHP"></span>
+                </div>
+            </div>
+        </div>
+        <div class="unit-output blue-container">
+            <div class="unit-title">
+                Defender
+            </div>
+            <div class="fields">
+                <div class="field">
+                    <span class="material-icons">flash_on</span>
+                    <span id="resultDefenderAttack"></span>
+                </div>
+                <div class="field">
+                    <span class="material-icons">shield</span>
+                    <span id="resultDefenderDefence"></span>
+                </div>
+                <div class="field">
+                    <span class="material-icons">speed</span>
+                    <span id="resultDefenderInitiative"></span>
+                </div>
+                <div class="field">
+                    <span class="material-icons">favorite</span>
+                    <span id="resultDefenderHP"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="button-holder"><button id="againButton" disabled>Again!</button></div>
+</div>
+<script src="system.js"></script>
+<script src="validator.js"></script>
+<script src="evaluator.js"></script>
+</body>
+</html>
