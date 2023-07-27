@@ -7,7 +7,12 @@ class Unit {
     }
 
     power() {
-        return (this.attack + 1) * (this.defence) * this.initiative * this.hp;
+        // Distribution-factor
+        return ((this.attack + 1) * (this.defence + 1)
+                // Tier-factor
+                + Math.pow((this.attack + this.defence), 2))
+            // State-factor
+            * this.initiative * this.hp;
     }
 
     clone() {
@@ -32,7 +37,11 @@ function sigmoid(x) {
 }
 
 function winProbability(bias) {
-    return sigmoid(6 * (bias - 0.5));
+    return bias;
+}
+
+function damage(attack, defence) {
+    return Math.max(0.5, attack * (1 - Math.log(defence + 1) / Math.log(attack + 3)));
 }
 
 function combat(attacker, defender) {
@@ -40,9 +49,8 @@ function combat(attacker, defender) {
     let defenderPower = defender.power();
 
     let bias = attackerPower / (attackerPower + defenderPower);
-    let winRate = winProbability(bias);
 
-    let outcome = Math.random() < winRate;
+    let outcome = Math.random() < bias;
 
     // Attacker loses morale no matter what.
     attacker = attacker.decreaseMorale(0.1);
@@ -50,8 +58,14 @@ function combat(attacker, defender) {
     let winner = outcome ? attacker : defender;
     let loser = outcome ? defender : attacker;
 
-    winner = winner.damage(Math.floor((1 - bias) * loser.attack / (winner.defence + 1)));
-    loser = loser.damage(Math.ceil(winner.attack / (loser.defence + 1)));
+    // If attacker wins
+    if (outcome) {
+        winner = winner.damage(Math.floor(damage(loser.attack, winner.defence)));
+        loser = loser.damage(Math.ceil(damage(winner.attack, winner.defence)));
+    } else {
+        winner = winner.damage(Math.floor(damage(loser.attack / 3, winner.defence)));
+        loser = loser.damage(Math.ceil(damage(winner.attack / 3, winner.defence)));
+    }
 
     return {
         outcome: outcome,
