@@ -23,12 +23,6 @@ function getErrors(attackInput, defenceInput, initiativeInput, hpInput) {
     if (!defenceInput) {
         errors.push('Missing defence value.');
     }
-    if (attackInput && defenceInput) {
-        let skillPoints = parseInt(attackInput) + parseInt(defenceInput);
-        if (![5, 10, 15].includes(skillPoints)) {
-            errors.push('ATK and DEF must add up to 5/10/15.');
-        }
-    }
     if (initiativeInput) {
         let initiative = parseFloat(initiativeInput);
         if (initiative < 0 || initiative > 1) {
