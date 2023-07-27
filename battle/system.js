@@ -53,7 +53,7 @@ function combat(attacker, defender) {
     let outcome = Math.random() < bias;
 
     // Attacker loses morale no matter what.
-    attacker = attacker.decreaseMorale(0.1);
+    attacker = attacker.decreaseMorale(0.07);
 
     let winner = outcome ? attacker : defender;
     let loser = outcome ? defender : attacker;
