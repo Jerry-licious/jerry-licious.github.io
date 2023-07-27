@@ -61,10 +61,10 @@ function combat(attacker, defender) {
     // If attacker wins
     if (outcome) {
         winner = winner.damage(Math.floor(damage(loser.attack * 0.3, winner.defence)));
-        loser = loser.damage(Math.ceil(damage(winner.attack, winner.defence)));
+        loser = loser.damage(Math.ceil(damage(winner.attack, loser.defence)));
     } else {
         winner = winner.damage(Math.floor(damage(loser.attack / 3 * 0.3, winner.defence)));
-        loser = loser.damage(Math.ceil(damage(winner.attack / 3, winner.defence)));
+        loser = loser.damage(Math.ceil(damage(winner.attack / 3, loser.defence)));
     }
 
     return {
