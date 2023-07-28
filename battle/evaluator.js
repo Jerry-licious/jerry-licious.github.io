@@ -10,10 +10,9 @@ const resultDefenderDefence = document.getElementById('resultDefenderDefence');
 const resultDefenderInitiative = document.getElementById('resultDefenderInitiative');
 const resultDefenderHP = document.getElementById('resultDefenderHP');
 
-const againButton = document.getElementById('againButton');
-
-let resultAttacker = null;
-let resultDefender = null;
+function roundedString(number) {
+    return (Math.round(number * 100) / 100).toString();
+}
 
 function simulateCombat() {
     let attacker = new Unit(parseInt(attackerAttackInput.value),
@@ -35,15 +34,17 @@ function simulateCombat() {
     // Update the elements.
     resultAttackerAttack.innerHTML = resultAttacker.attack.toString();
     resultAttackerDefence.innerHTML = resultAttacker.defence.toString();
-    resultAttackerInitiative.innerHTML = (Math.round(resultAttacker.initiative * 100) / 100).toString();
+    resultAttackerInitiative.innerHTML = roundedString(resultAttacker.initiative);
     resultAttackerHP.innerHTML = resultAttacker.hp.toString();
 
     resultDefenderAttack.innerHTML = resultDefender.attack.toString();
     resultDefenderDefence.innerHTML = resultDefender.defence.toString();
-    resultDefenderInitiative.innerHTML = (Math.round(resultDefender.initiative * 100) / 100).toString();
+    resultDefenderInitiative.innerHTML = roundedString(resultDefender.initiative);
     resultDefenderHP.innerHTML = resultDefender.hp.toString();
 
     againButton.disabled = false;
+
+    updateButtons();
 }
 
 fightButton.addEventListener('click', simulateCombat);
@@ -52,13 +53,38 @@ fightButton.addEventListener('click', simulateCombat);
 function again() {
     attackerAttackInput.value = resultAttacker.attack.toString();
     attackerDefenceInput.value = resultAttacker.defence.toString();
-    attackerInitiativeInput.value = (Math.round(resultAttacker.initiative * 100) / 100).toString();
+    attackerInitiativeInput.value = roundedString(resultAttacker.initiative);
     attackerHPInput.value = resultAttacker.hp.toString();
 
     defenderAttackInput.value = resultDefender.attack.toString();
     defenderDefenceInput.value = resultDefender.defence.toString();
-    defenderInitiativeInput.value = (Math.round(resultDefender.initiative * 100) / 100).toString();
+    defenderInitiativeInput.value = roundedString(resultDefender.initiative);
     defenderHPInput.value = resultDefender.hp.toString();
+
+    updateAttackerErrors();
+    updateDefenderErrors();
 }
 
+function swap() {
+    let attacker = new Unit(parseInt(attackerAttackInput.value),
+        parseInt(attackerDefenceInput.value),
+        parseFloat(attackerInitiativeInput.value),
+        parseInt(attackerHPInput.value));
+    let defender = new Unit(parseInt(defenderAttackInput.value),
+        parseInt(defenderDefenceInput.value),
+        parseFloat(defenderInitiativeInput.value),
+        parseInt(defenderHPInput.value));
+
+    attackerAttackInput.value = defender.attack.toString();
+    attackerDefenceInput.value = defender.defence.toString();
+    attackerInitiativeInput.value = roundedString(defender.initiative);
+    attackerHPInput.value = defender.hp.toString();
+
+    defenderAttackInput.value = attacker.attack.toString();
+    defenderDefenceInput.value = attacker.defence.toString();
+    defenderInitiativeInput.value = roundedString(attacker.initiative);
+    defenderHPInput.value = attacker.hp.toString();
+}
+
+swapButton.addEventListener('click', swap)
 againButton.addEventListener('click', again);

@@ -30,6 +30,10 @@ class Unit {
         newUnit.initiative -= morale;
         return newUnit;
     }
+
+    canFight() {
+        return this.initiative > 0 && this.hp > 0;
+    }
 }
 
 function sigmoid(x) {

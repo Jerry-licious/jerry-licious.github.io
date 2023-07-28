@@ -11,9 +11,14 @@ const defenderHPInput = document.getElementById('defenderHP');
 const defenderErrorDisplay = document.getElementById('defenderErrors');
 
 const fightButton = document.getElementById('fightButton');
+const swapButton = document.getElementById('swapButton');
+const againButton = document.getElementById('againButton');
 
 let attackerErrors = [];
 let defenderErrors = [];
+
+let resultAttacker = null;
+let resultDefender = null;
 
 function getErrors(attackInput, defenceInput, initiativeInput, hpInput) {
     let errors = [];
@@ -51,8 +56,28 @@ function displayErrors(element, errors) {
     }
 }
 
-function updateFightButton() {
-    fightButton.disabled = attackerErrors.length !== 0 || defenderErrors.length !== 0;
+function enableButton(element) {
+    element.classList.remove('disabled');
+    element.parentElement.classList.remove('disabled');
+}
+function disableButton(element) {
+    element.classList.add('disabled');
+    element.parentElement.classList.add('disabled');
+}
+
+function updateButtons() {
+    if (attackerErrors.length !== 0 || defenderErrors.length !== 0) {
+        disableButton(fightButton);
+        disableButton(swapButton);
+    } else {
+        enableButton(fightButton);
+        enableButton(swapButton);
+    }
+    if (resultAttacker && resultAttacker.canFight() && resultDefender && resultDefender.canFight()) {
+        enableButton(againButton);
+    } else {
+        disableButton(againButton);
+    }
 }
 
 function updateAttackerErrors() {
@@ -60,7 +85,7 @@ function updateAttackerErrors() {
         attackerAttackInput.value, attackerDefenceInput.value,
         attackerInitiativeInput.value, attackerHPInput.value);
     displayErrors(attackerErrorDisplay, attackerErrors);
-    updateFightButton();
+    updateButtons();
 }
 
 attackerAttackInput.addEventListener('input', updateAttackerErrors);
@@ -73,7 +98,7 @@ function updateDefenderErrors() {
         defenderAttackInput.value, defenderDefenceInput.value,
         defenderInitiativeInput.value, defenderHPInput.value);
     displayErrors(defenderErrorDisplay, defenderErrors);
-    updateFightButton();
+    updateButtons();
 }
 
 defenderAttackInput.addEventListener('input', updateDefenderErrors);

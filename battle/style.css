@@ -9,6 +9,8 @@ html, body {
     --on-surface: #d5c2c6;
 
     --primary: #D0BCFF;
+    --primary-bright: #d6c4ff;
+    --primary-brighter: #dbcdff;
     --on-primary: #381E72;
     --primary-container: #4F378B;
     --on-primary-container: #EADDFF;
@@ -165,15 +167,17 @@ input[type=number] {
     display: flex;
     flex-direction: row;
     justify-content: center;
+
+    gap: 10px;
 }
 
-button {
-    font-size: 24px;
+.button-holder a {
+    font-size: 30px;
 
     color: var(--on-primary);
     background-color: var(--primary);
 
-    padding: 10px;
+    padding: 5px;
     border-radius: 10px;
 
     border: none;
@@ -181,8 +185,18 @@ button {
 
     cursor: pointer;
 }
-button:disabled {
+.button-holder a:hover {
+    background-color: var(--primary-bright);
+}
+.button-holder a:active {
+    background-color: var(--primary-brighter);
+}
+.button-holder a.disabled {
     opacity: 0.5;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+.button-holder div.disabled {
     cursor: not-allowed;
 }
 
