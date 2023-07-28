@@ -37,7 +37,7 @@ function sigmoid(x) {
 }
 
 function winProbability(bias) {
-    return bias;
+    return sigmoid(3.5 * (bias - 0.5));
 }
 
 function damage(attack, defence) {
@@ -49,8 +49,9 @@ function combat(attacker, defender) {
     let defenderPower = defender.power();
 
     let bias = attackerPower / (attackerPower + defenderPower);
+    let winrate = winProbability(bias)
 
-    let outcome = Math.random() < bias;
+    let outcome = Math.random() < winrate;
 
     // Attacker loses morale no matter what.
     attacker = attacker.decreaseMorale(0.07);
